@@ -1,0 +1,76 @@
+.header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo_space{
+    width:10%;
+}
+
+.title_space{
+    width:50%;
+}
+
+.title {
+    width: 100%;
+}
+
+.page_title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    width: 30%;
+}
+
+.text{
+    width:30%;
+}
+
+.input{
+    width: 100%;
+    padding: 5px;
+}
+
+.link{
+    margin:0 10px 0 auto;
+}
+
+.auth{
+    margin-left: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.sell{
+    margin-left: 30px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    padding: 5px 8px;
+}
+
+.list_link{
+    margin-top:30px;
+    border-bottom: 1px black solid;
+}
+
+.rec{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    margin-left: 60px;
+}
+
+.mylist{
+    text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: gray;
+        margin-left: 60px;
+}

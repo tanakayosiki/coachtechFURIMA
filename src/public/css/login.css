@@ -1,0 +1,71 @@
+.header{
+    background-color: black;
+}
+
+.logo{
+    width: 80%;
+}
+
+.title{
+    width:40%;
+}
+
+.page_title{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.login{
+    width:30%;
+    margin: 0 auto;
+}
+
+.login_header{
+    text-align: center;
+}
+
+.content{
+    width: 100%;
+}
+
+.email,.password{
+    margin-top: 40px;
+}
+
+.input{
+    width: 100%;
+}
+
+.item{
+    margin: 0;
+    font-weight: bold;
+}
+
+.submit{
+    width:100%;
+    color: white;
+    background-color: rgb(255, 80, 80);
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 40px 0 20px 0;
+    cursor: pointer;
+}
+
+.register{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color: rgb(0, 183, 255);
+}
+
+.error{
+    color: red;
+    margin: 0;
+}

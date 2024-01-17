@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/item.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
     <title>FURIMA</title>
 </head>
 <body>
@@ -41,23 +41,42 @@
                 </form>
             </div>
         </header>
-        <div class="item">
-            <div class="list_link">
-                <a class="rec" href="">おすすめ</a>
-                <a class="mylist" href="">マイリスト</a>
+        <div class="detail">
+            <div class="img">
+                <img class="img_path" src="{{Storage::url($item->img)}}">
             </div>
-            <p class="message">{{session('message')}}</p>
-            <div class="item_list">
-                @foreach($items as $item)
-                <div class="content">
-                    <a class="detail" href="{{route('detail',$item->id)}}">
-                        <img class="item_img" src="{{Storage::url($item->img)}}">
-                        <p class="amount">¥{{$item['amount']}}</p>
-                    </a>
+            <div class="overview">
+                <div class="name">
+                    <p class="item_name">{{$item['name']}}</p>
+                    <p class="brand">{{$item['brand']}}</p>
                 </div>
-                @endforeach
+                <p class="amount">¥{{$item['amount']}}</p>
+                <div class="option">
+                    <a class="nice" href="">☆</a>
+                    <a class="comment" href="">○</a>
+                </div>
+                <div class="button">
+                    <form action="{{route('buy',$item->id)}}">
+                        <button class="buy" type="submit">購入する</button>
+                        <input type="hidden" name="id" value="{{optional($profile)->id}}">
+                    </form>
+                </div>
+                <div class="explanation">
+                    <h2>商品説明</h2>
+                    <p class="item_detail">{{$item['detail']}}</p>
+                </div>
+                <div class="info">
+                    <h2>商品の情報</h2>
+                    <div class="info_content">
+                        <h3>カテゴリー</h3>
+                        <p class="category">{{$item['category']}}</p>
+                    </div>
+                    <div class="info_content">
+                        <h3>商品の状態</h3>
+                        <p class="situation">{{$item['situation']}}</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
 </body>
 </html>

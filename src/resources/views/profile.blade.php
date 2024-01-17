@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/item.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
     <title>FURIMA</title>
 </head>
 <body>
@@ -23,41 +23,42 @@
                 <input class="input" type="text" name="keyword" placeholder="何をお探しですか？" onchange="this.form.submit()">
             </div>
             <div class="link">
-                @guest
-                <a class="auth" href="/login">ログイン</a>
-                @endguest
-                @auth
                 <a class="auth" href="/logout">ログアウト</a>
-                @endauth
-                @guest
-                <a class="auth" href="/register">会員登録</a>
-                @endguest
-                @auth
                 <a class="auth" href="/mypage">マイページ</a>
-                @endauth
                 <form class="sell" action="/sell" method="get">
                     <button class="submit" type="submit">出品</button>
                     <input type="hidden" name="id" value="{{optional($user)->id}}">
                 </form>
             </div>
         </header>
-        <div class="item">
-            <div class="list_link">
-                <a class="rec" href="">おすすめ</a>
-                <a class="mylist" href="">マイリスト</a>
+        <div class="profile">
+        <form action="/mypage/profile" method="post">
+            <h1>プロフィール設定</h1>
+            <div class="img">
+                <img class="profile_img" src="">
+                <label>
+                    <input type="file" name="img">画像を選択する
+                </label>
             </div>
-            <p class="message">{{session('message')}}</p>
-            <div class="item_list">
-                @foreach($items as $item)
-                <div class="content">
-                    <a class="detail" href="{{route('detail',$item->id)}}">
-                        <img class="item_img" src="{{Storage::url($item->img)}}">
-                        <p class="amount">¥{{$item['amount']}}</p>
-                    </a>
-                </div>
-                @endforeach
+            <div class="content">
+                <h2>ユーザー名</h2>
+                <input class="text_input" type="text" name="name" value="{{old('name')}}">
             </div>
+            <div class="content">
+                <h2>郵便番号</h2>
+                <input class="text_input" type="text" name="post_code" value="{{old('post_code')}}">
+                <p class="hyphen">※ハイフンを含んで入力してください</p>
+            </div>
+            <div class="content">
+                <h2>住所</h2>
+                <input class="text_input" type="text" name="address" value="{{old('address')}}">
+            </div>
+            <div class="content">
+                <h2>建物名</h2>
+                <input class="text_input" type="text" name="building" value="{{old('building')}}">
+            </div>
+            <button class="update" type="submit">更新する</button>
+        </form>
         </div>
-    </main>
 </body>
 </html>

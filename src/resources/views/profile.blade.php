@@ -32,30 +32,29 @@
             </div>
         </header>
         <div class="profile">
-        <form action="/mypage/profile" method="post">
+        <form action="/mypage/profile" method="post" enctype="multipart/form-data">
+            @csrf
             <h1>プロフィール設定</h1>
             <div class="img">
-                <img class="profile_img" src="">
-                <label>
-                    <input type="file" name="img">画像を選択する
-                </label>
+                <img class="profile_img" src="{{Storage::url(optional($profile)->img)}}">
+                <input type="file" name="img" value="{{optional($profile)['img']}}">
             </div>
             <div class="content">
                 <h2>ユーザー名</h2>
-                <input class="text_input" type="text" name="name" value="{{old('name')}}">
+                <input class="text_input" type="text" name="name" value="{{optional($profile)['name']}}">
             </div>
             <div class="content">
                 <h2>郵便番号</h2>
-                <input class="text_input" type="text" name="post_code" value="{{old('post_code')}}">
+                <input class="text_input" type="text" name="post_code" value="{{optional($profile)['post_code']}}">
                 <p class="hyphen">※ハイフンを含んで入力してください</p>
             </div>
             <div class="content">
                 <h2>住所</h2>
-                <input class="text_input" type="text" name="address" value="{{old('address')}}">
+                <input class="text_input" type="text" name="address" value="{{optional($profile)['address']}}">
             </div>
             <div class="content">
                 <h2>建物名</h2>
-                <input class="text_input" type="text" name="building" value="{{old('building')}}">
+                <input class="text_input" type="text" name="building" value="{{optional($profile)['building']}}">
             </div>
             <button class="update" type="submit">更新する</button>
         </form>

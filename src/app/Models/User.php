@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function items(){
         return $this->belongsToMany('App\Models\Item');
     }
+
+    public function profile(){
+        return $this->hasOne('App\Models\Profile');
+    }
 }

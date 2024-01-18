@@ -59,49 +59,48 @@
 
 .profile{
     width:50%;
+    display: flex;
+    align-items: center;
     margin: 0 auto;
 }
 
-label{
+.update{
+    margin-left: auto;
+}
+
+.update_link{
+    text-decoration: none;
     border: 1px solid rgb(255, 80, 80);
     color: rgb(255, 80, 80);
-    border-radius: 5px;
-    padding: 10px 15px;
     font-weight: bold;
-}
-
-h1{
-    text-align: center;
-}
-
-h2{
-    margin: 0;
-}
-
-.content{
-    margin-bottom: 30px;
-}
-
-.text_input{
-    width: 100%;
-}
-
-.hyphen{
-    margin: 0;
-}
-
-.update{
-    width: 100%;
-    color: white;
-    background-color: rgb(255, 80, 80);
-    border: none;
+    padding: 8px 15px;
     border-radius: 3px;
-    font-weight: bold;
-    padding: 5px 0;
 }
 
-.profile_img{
-    width:80px;
-    height:80px;
-    border-radius: 60%;
+.item_link {
+    margin-top: 30px;
+    border-bottom: 1px black solid;
 }
+
+.sell_item {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    margin-left: 60px;
+}
+
+.buy_item {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+    margin-left: 60px;
+}
+
+.now_img{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+}
+

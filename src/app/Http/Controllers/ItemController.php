@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Item;
+use App\Models\Profile;
 
 class ItemController extends Controller
 {
@@ -17,6 +18,7 @@ class ItemController extends Controller
     public function detail($id){
         $item=Item::find($id);
         $user=Auth::user();
-        return view('detail',compact('user','item'));
+        $profile=Profile::where('user_id',$user->id)->first();
+        return view('detail',compact('user','item','profile'));
     }
 }

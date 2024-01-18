@@ -22,10 +22,14 @@ Route::post('/login',[AuthController::class,'postLogin']);
 Route::get('/register', [AuthController::class,'getRegister']);
 Route::post('/register', [AuthController::class,'postRegister']);
 Route::get('/',[ItemController::class,'index']);
+Route::get('/item/{id}',[ItemController::class,'detail'])->name('detail');
+
 Route::middleware('auth')->group(function () {
 Route::get('/sell',[SellController::class,'index']);
 Route::post('/sell/{id}',[SellController::class,'sell'])->name('sell');
+Route::get('/mypage',[MyPageController::class,'index']);
 Route::get('/mypage/profile',[MyPageController::class,'profile']);
+Route::post('/mypage/profile',[MyPageController::class,'postProfile']);
+Route::get('/buy',[BuyController::class,'index'])->name('buy');
 });
-Route::get('/item/{id}',[ItemController::class,'detail'])->name('detail');
 

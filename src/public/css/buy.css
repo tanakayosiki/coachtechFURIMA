@@ -1,0 +1,164 @@
+.header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo_space {
+    width: 10%;
+}
+
+.title_space {
+    width: 50%;
+}
+
+.title {
+    width: 100%;
+}
+
+.page_title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    width: 30%;
+}
+
+.text {
+    width: 30%;
+}
+
+.input {
+    width: 100%;
+    padding: 5px;
+}
+
+.link {
+    margin: 0 10px 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.auth {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.submit {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    margin-left: 30px;
+    padding: 5px 15px;
+}
+
+.buy{
+    width: 90%;
+    margin: 50px auto;
+}
+
+form{
+    display: flex;
+}
+
+.left_screen{
+    width:60%;
+}
+
+.item_info{
+    display: flex;
+}
+
+.item_img{
+    width: 30%;
+    height: 150px;
+}
+
+.name_amount{
+    margin-left: 30px;
+}
+
+.name{
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.payment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.update{
+    text-decoration: none;
+    color: skyblue;
+}
+
+.right_screen{
+    width: 30%;
+    margin-left: auto;
+}
+
+.confirm{
+    border: 1px solid black;
+    width:100%;
+    padding: 0 20px;
+}
+
+.item_amount{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 40px 0;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.payment_confirm{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.button{
+    margin: 50px 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(255, 80, 80);
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+}
+
+.message{
+    font-weight: bold;
+    text-align: center;
+    color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+

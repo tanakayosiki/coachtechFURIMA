@@ -21,6 +21,7 @@ Route::get('/login',[AuthController::class,'getLogin'])->name('login');
 Route::post('/login',[AuthController::class,'postLogin']);
 Route::get('/register', [AuthController::class,'getRegister']);
 Route::post('/register', [AuthController::class,'postRegister']);
+Route::get('/logout',[AuthController::class,'getLogout']);
 Route::get('/',[ItemController::class,'index']);
 Route::get('/item/{id}',[ItemController::class,'detail'])->name('detail');
 
@@ -30,6 +31,9 @@ Route::post('/sell/{id}',[SellController::class,'sell'])->name('sell');
 Route::get('/mypage',[MyPageController::class,'index']);
 Route::get('/mypage/profile',[MyPageController::class,'profile']);
 Route::post('/mypage/profile',[MyPageController::class,'postProfile']);
-Route::get('/buy',[BuyController::class,'index'])->name('buy');
+Route::get('/buy/{id}',[BuyController::class,'index'])->name('buy');
+Route::post('/buy/{id}',[BuyController::class,'buy'])->name('postBuy');
+Route::get('/buy/address/{id}',[BuyController::class,'address'])->name('address');
+Route::post('/buy/address/{id}',[BuyController::class,'postAddress'])->name('postAddress');
 });
 

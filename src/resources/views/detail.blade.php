@@ -58,7 +58,6 @@
                 <div class="button">
                     <form action="{{route('buy',$item->id)}}" method="get">
                         <button class="buy" type="submit">購入する</button>
-                        <input type="hidden" name="id" value="{{optional($profile)->id}}">
                     </form>
                 </div>
                 <div class="explanation">

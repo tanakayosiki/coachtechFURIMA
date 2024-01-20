@@ -52,8 +52,18 @@
                 </div>
                 <p class="amount">¥{{$item['amount']}}</p>
                 <div class="option">
-                    <a class="nice" href="">☆</a>
-                    <a class="comment" href="">○</a>
+                    @if($item->is_liked_by_auth_user())
+                    <div class="nice">
+                        <a class="star" href="{{route('unnice',$item->id)}}"></a>
+                    </div>
+                    @else
+                    <div class="nice">
+                        <a class="off_star" href="{{route('nice',$item)}}"></a>
+                    </div>
+                    @endif
+                    <a class="comment" href="">
+                        <img class="comment_img" src="{{asset('img/comment.svg')}}">
+                    </a>
                 </div>
                 <div class="button">
                     <form action="{{route('buy',$item->id)}}" method="get">

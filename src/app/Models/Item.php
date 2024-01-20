@@ -19,4 +19,24 @@ class Item extends Model
     public function buys(){
         return $this->hasMany('App\Models\Buy');
     }
+
+    public function nices(){
+        return $this->hasMany('App\Models\Nice');
+    }
+
+    public function is_liked_by_auth_user(){
+    $id = Auth::id();
+
+    $nicers = array();
+    foreach($this->nices as $nice) {
+    array_push($nicers, $nice->user_id);
+    }
+
+    if (in_array($id, $nicers)) {
+    return true;
+    } else {
+    return false;
+    }
+    }
+
 }

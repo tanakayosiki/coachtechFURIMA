@@ -38,7 +38,7 @@
                 </div>
                 <div class="name">
                     <h2>ユーザー名</h2>
-                    <p class="now_name">{{$profile['name']}}</p>
+                    <p class="now_name">{{optional($profile)['name']}}</p>
                 </div>
                 <div class="update">
                     <a class="update_link" href="mypage/profile">プロフィールを編集</a>
@@ -49,7 +49,14 @@
                 <a class="buy_item" href="">購入した商品</a>
             </div>
             <div class="item_list">
-
+                @foreach($myPages as $myPage)
+                <div class="content">
+                    <a class="detail" href="{{route('detail',$myPage->id)}}">
+                        <img class="item_img" src="{{Storage::url($myPage->img)}}">
+                        <p class="amount">¥{{$myPage['amount']}}</p>
+                    </a>
+                </div>
+                @endforeach
             </div>
         </div>
 </body>

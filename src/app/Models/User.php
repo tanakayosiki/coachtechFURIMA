@@ -52,4 +52,8 @@ class User extends Authenticatable
     public function buys(){
         return $this->hasMany('App\Models\Buy');
     }
+
+    public function nices(){
+        return $this->hasMany('App\Models\Nice');
+    }
 }

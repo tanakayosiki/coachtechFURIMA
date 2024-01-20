@@ -6,6 +6,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\NiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,7 @@ Route::get('/buy/{id}',[BuyController::class,'index'])->name('buy');
 Route::post('/buy/{id}',[BuyController::class,'buy'])->name('postBuy');
 Route::get('/buy/address/{id}',[BuyController::class,'address'])->name('address');
 Route::post('/buy/address/{id}',[BuyController::class,'postAddress'])->name('postAddress');
+Route::get('/nice/{shop}',[NiceController::class,'nice'])->name('nice');
+Route::get('/unnice/{id}',[NiceController::class,'unNice'])->name('unnice');
 });
 

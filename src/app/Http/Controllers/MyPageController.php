@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Profile;
+use App\Models\Item;
 
 class MyPageController extends Controller
 {
     public function index(){
         $user=Auth::user();
         $profile=Profile::where('user_id',$user->id)->first();
-        return view('my_page',compact('user','profile'));
+        $myPages=Item::whereHas('users',function($query)use($user){
+        $query->where('user_id',$user->id);
+        })->get();
+        return view('my_page',compact('user','profile','myPages'));
     }
 
     public function profile(){

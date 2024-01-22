@@ -11,14 +11,14 @@
 <body>
     <main class="main">
         <header class="header">
-            <div class="page_title">
+            <a class="page_title" href="/">
                 <p class="logo_space">
                     <img class="logo" src="{{asset('img/logo_img.svg')}}">
                 </p>
                 <p class="title_space">
                     <img class="title" src="{{asset('img/coachtech_img.png')}}">
                 </p>
-            </div>
+            </a>
             <div class="text">
                 <input class="input" type="text" name="keyword" placeholder="何をお探しですか？" onchange="this.form.submit()">
             </div>
@@ -43,18 +43,36 @@
         </header>
         <div class="item">
             <div class="list_link">
-                <a class="rec" href="">おすすめ</a>
-                <a class="mylist" href="">マイリスト</a>
+                @if(Request::is('/'))
+                <a class="rec" href="/">おすすめ</a>
+                @else
+                <a class="no_rec" href="/">おすすめ</a>
+                @endif
+                @if(Request::is('mylist'))
+                <a class="mylist" href="/mylist">マイリスト</a>
+                @else
+                <a class="no_mylist" href="/mylist">マイリスト</a>
+                @endif
             </div>
             <p class="message">{{session('message')}}</p>
             <div class="item_list">
                 @foreach($items as $item)
+                @if($item->buy===null)
                 <div class="content">
                     <a class="detail" href="{{route('detail',$item->id)}}">
                         <img class="item_img" src="{{Storage::url($item->img)}}">
                         <p class="amount">¥{{$item['amount']}}</p>
                     </a>
                 </div>
+                @else
+                <div class="content">
+                    <a class="detail" href="{{route('detail',$item->id)}}">
+                        <img class="item_img" src="{{Storage::url($item->img)}}">
+                        <p class="amount">¥{{$item['amount']}}</p>
+                        <p class="sold">sold out</p>
+                    </a>
+                </div>
+                @endif
                 @endforeach
             </div>
         </div>

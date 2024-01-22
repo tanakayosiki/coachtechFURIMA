@@ -18,6 +18,15 @@ class MyPageController extends Controller
         return view('my_page',compact('user','profile','myPages'));
     }
 
+    public function buyList(){
+        $user=Auth::user();
+        $profile=Profile::where('user_id',$user->id)->first();
+        $myPages=Item::whereHas('buy',function($query)use($user){
+        $query->where('user_id',$user->id);
+        })->get();
+        return view('my_page',compact('user','profile','myPages'));
+    }
+
     public function profile(){
         $user=Auth::user();
         $profile=Profile::where('user_id',$user->id)->first();

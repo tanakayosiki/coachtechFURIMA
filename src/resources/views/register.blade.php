@@ -11,14 +11,14 @@
 <body>
     <main class="main">
         <header class="header">
-            <div class="page_title">
+            <a class="page_title" href="/">
                 <p>
                     <img  class="logo" src="{{asset('img/logo_img.svg')}}">
                 </p>
                 <p>
                     <img  class="title" src="{{asset('img/coachtech_img.png')}}">
                 </p>
-            </div>
+            </a>
         </header>
         <div class="register">
         <form class="form" action="/register" method="post">

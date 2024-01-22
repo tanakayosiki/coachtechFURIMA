@@ -70,12 +70,28 @@
     margin-left: 60px;
 }
 
+.no_rec {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+    margin-left: 60px;
+}
+
 .mylist{
     text-decoration: none;
         font-weight: bold;
         font-size: 20px;
-        color: gray;
+        color: red;
         margin-left: 60px;
+}
+
+.no_mylist {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+    margin-left: 60px;
 }
 
 .item_list{
@@ -107,4 +123,16 @@
     position: absolute;
     top:80%;
     color: black;
+}
+
+.sold{
+    position: absolute;
+    top:30%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
+    color: red;
+    background-color: white;
+    border-top: 20px solid red;
+    border-bottom: 20px solid red;
 }

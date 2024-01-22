@@ -16,12 +16,16 @@ class Item extends Model
         return $this->belongsToMany('App\Models\User')->withTimestamps();
     }
 
-    public function buys(){
-        return $this->hasMany('App\Models\Buy');
+    public function buy(){
+        return $this->hasOne('App\Models\Buy');
     }
 
     public function nices(){
         return $this->hasMany('App\Models\Nice');
+    }
+
+    public function  comments(){
+        return $this->hasMany('App\Models\Comment');
     }
 
     public function is_liked_by_auth_user(){

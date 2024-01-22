@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/comment.css') }}">
     <title>FURIMA</title>
 </head>
 <body>
@@ -23,18 +23,8 @@
                 <input class="input" type="text" name="keyword" placeholder="何をお探しですか？" onchange="this.form.submit()">
             </div>
             <div class="link">
-                @guest
-                <a class="auth" href="/login">ログイン</a>
-                @endguest
-                @auth
                 <a class="auth" href="/logout">ログアウト</a>
-                @endauth
-                @guest
-                <a class="auth" href="/register">会員登録</a>
-                @endguest
-                @auth
                 <a class="auth" href="/mypage">マイページ</a>
-                @endauth
                 <form class="sell" action="/sell" method="get">
                     <button class="submit" type="submit">出品</button>
                     <input type="hidden" name="id" value="{{optional($user)->id}}">
@@ -61,33 +51,31 @@
                         <a class="off_star" href="{{route('nice',$item)}}"></a>
                     </div>
                     @endif
-                    <a class="comment_link" href="{{route('comment',$item->id)}}">
+                    <a class="comment_link" href="">
                         <img class="comment_img" src="{{asset('img/comment.svg')}}">
                     </a>
                 </div>
-                <div class="button">
-                    @if($item->buy===null)
-                    <form action="{{route('buy',$item->id)}}" method="get">
-                        <button class="buy" type="submit">購入する</button>
+                <div class="comment">
+                    <form class="comment_form" action="{{route('postComment',$item->id)}}" method="post">
+                        @csrf
+                        <div class="comment_list">
+                            @foreach($comments as $comment)
+                            <div class="by_user">
+                                <div class="user_info">
+                                    <img class="user_img" src="{{Storage::url($comment->user->profile->img)}}">
+                                    <p class="name">{{$comment->user->profile->name}}</p>
+                                    @if($user->id===$itemUser->id)
+                                    <a class="delete" href="{{route('deleteComment',$comment->id)}}">削除</a>
+                                    @endif
+                                </div>
+                                <p class="content">{{$comment['comment']}}</p>
+                            </div>
+                            @endforeach
+                        </div>
+                        <p class="new_comment">商品へのコメント</p>
+                        <textarea name="comment" cols="30" value="{{old('comment')}}"></textarea>
+                        <button class="button" type="submit">コメントを送信する</button>
                     </form>
-                    @else
-                    <button class="buy" disabled>購入する</button>
-                    @endif
-                </div>
-                <div class="explanation">
-                    <h2>商品説明</h2>
-                    <p class="item_detail">{{$item['detail']}}</p>
-                </div>
-                <div class="info">
-                    <h2>商品の情報</h2>
-                    <div class="info_content">
-                        <h3>カテゴリー</h3>
-                        <p class="category">{{$item['category']}}</p>
-                    </div>
-                    <div class="info_content">
-                        <h3>商品の状態</h3>
-                        <p class="situation">{{$item['situation']}}</p>
-                    </div>
                 </div>
             </div>
         </div>

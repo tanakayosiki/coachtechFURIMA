@@ -72,6 +72,22 @@
                         <p class="amount">¥{{$myPage['amount']}}</p>
                         <p class="sold">sold out</p>
                     </a>
+                    @if($myPage->buy->payment==='クレジットカード払い')
+                    <form class="stripe" action="{{route('stripe.charge',$myPage->id)}}" method="POST">
+                        @csrf
+                        <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="{{ env('STRIPE_KEY') }}"
+                            data-amount="{{$myPage->amount}}"
+                            data-name="お支払い画面"
+                            data-label="決済する"
+                            data-description="決済情報を入力してください"
+                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                            data-locale="auto"
+                            data-currency="JPY">
+                        </script>
+                    </form>
+                    @endif
                 </div>
                 @endif
                 @endforeach

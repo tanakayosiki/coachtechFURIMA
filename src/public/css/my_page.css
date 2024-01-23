@@ -58,7 +58,7 @@
 }
 
 .profile{
-    width:50%;
+    width:60%;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -153,7 +153,7 @@
 
 .sold {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 0%;
     width: 100%;
     text-align: center;
@@ -161,4 +161,9 @@
     background-color: white;
     border-top: 20px solid red;
     border-bottom: 20px solid red;
+}
+
+.stripe {
+    position: absolute;
+    top: 70%;
 }

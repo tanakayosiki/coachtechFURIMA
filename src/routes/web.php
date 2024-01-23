@@ -8,6 +8,7 @@ use App\Http\Controllers\BuyController;
 use App\Http\Controllers\MyPageController;
 use App\Http\Controllers\NiceController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,6 @@ Route::get('/login',[AuthController::class,'getLogin'])->name('login');
 Route::post('/login',[AuthController::class,'postLogin']);
 Route::get('/register', [AuthController::class,'getRegister']);
 Route::post('/register', [AuthController::class,'postRegister']);
-Route::get('/logout',[AuthController::class,'getLogout']);
 Route::get('/',[ItemController::class,'index']);
 Route::get('/item/{id}',[ItemController::class,'detail'])->name('detail');
 
@@ -44,5 +44,7 @@ Route::get('/item/comment/{id}',[CommentController::class,'index'])->name('comme
 Route::post('/item/comment/{id}',[CommentController::class,'postComment'])->name('postComment');
 Route::get('/item/comment/delete/{id}',[CommentController::class,'deleteComment'])->name('deleteComment');
 Route::get('/mylist',[ItemController::class,'myList']);
+Route::get('/logout',[AuthController::class,'getLogout']);
+Route::post('/charge/{id}', [StripeController::class,'charge'])->name('stripe.charge');
 });
 

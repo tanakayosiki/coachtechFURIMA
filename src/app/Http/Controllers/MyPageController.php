@@ -12,7 +12,7 @@ class MyPageController extends Controller
     public function index(){
         $user=Auth::user();
         $profile=Profile::where('user_id',$user->id)->first();
-        $myPages=Item::whereHas('users',function($query)use($user){
+        $myPages=Item::whereHas('user',function($query)use($user){
         $query->where('user_id',$user->id);
         })->get();
         return view('my_page',compact('user','profile','myPages'));

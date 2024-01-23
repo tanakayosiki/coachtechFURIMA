@@ -12,8 +12,8 @@ class Item extends Model
 
     protected $fillable=['situation','category','img','name','detail','brand','amount'];
 
-    public function users(){
-        return $this->belongsToMany('App\Models\User')->withTimestamps();
+    public function user(){
+        return $this->belongsTo('App\Models\User')->withTimestamps();
     }
 
     public function buy(){
@@ -24,7 +24,7 @@ class Item extends Model
         return $this->hasMany('App\Models\Nice');
     }
 
-    public function  comments(){
+    public function comments(){
         return $this->hasMany('App\Models\Comment');
     }
 

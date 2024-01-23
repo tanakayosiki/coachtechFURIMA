@@ -15,7 +15,7 @@ class SellController extends Controller
     }
 
     public function sell(Request $request){
-        $id=$request['id'];
+        $id=$request['id'];dd($request);
         $img=$request->file('img');
         $path=$img->store('img_path','public');
         $sell=Item::create([

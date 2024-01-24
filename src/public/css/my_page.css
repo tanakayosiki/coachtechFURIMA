@@ -167,3 +167,10 @@
     position: absolute;
     top: 70%;
 }
+
+.no_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightgray;
+}

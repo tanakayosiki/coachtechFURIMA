@@ -28,6 +28,10 @@ class Item extends Model
         return $this->hasMany('App\Models\Comment');
     }
 
+    public function sell(){
+        return $this->hasOne('App\Models\Sell');
+    }
+
     public function is_liked_by_auth_user(){
     $id = Auth::id();
 

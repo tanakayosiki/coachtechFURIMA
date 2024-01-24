@@ -62,10 +62,19 @@
                             @foreach($comments as $comment)
                             <div class="by_user">
                                 <div class="user_info">
+                                    @if($comment->user->profile===null)
+                                    <p class="no_img"></p>
+                                    <p class="no_img">ユーザー名</p>
+                                    @else
+                                    @if($comment->user->profile->img===null)
+                                    <p class="no_img"></p>
+                                    @else
                                     <img class="user_img" src="{{Storage::url($comment->user->profile->img)}}">
+                                    @endif
                                     <p class="name">{{$comment->user->profile->name}}</p>
                                     @if($user->id===$itemUser->id)
                                     <a class="delete" href="{{route('deleteComment',$comment->id)}}">削除</a>
+                                    @endif
                                     @endif
                                 </div>
                                 <p class="content">{{$comment['comment']}}</p>

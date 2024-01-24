@@ -66,12 +66,14 @@
                     </a>
                 </div>
                 <div class="button">
+                    @if(empty($item->sell->user_id===optional($user)->id))
                     @if($item->buy===null)
                     <form action="{{route('buy',$item->id)}}" method="get">
                         <button class="buy" type="submit">購入する</button>
                     </form>
                     @else
                     <button class="buy" disabled>購入する</button>
+                    @endif
                     @endif
                 </div>
                 <div class="explanation">

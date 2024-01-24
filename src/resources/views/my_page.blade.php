@@ -34,7 +34,11 @@
         <div class="my_page">
             <div class="profile">
                 <div class="img">
+                    @if(optional($profile)->img===null)
+                    <p class="no_img"></p>
+                    @else
                     <img class="now_img" src="{{Storage::url(optional($profile)->img)}}">
+                    @endif
                 </div>
                 <div class="name">
                     <h2>ユーザー名</h2>

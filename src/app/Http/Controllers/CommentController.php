@@ -13,7 +13,7 @@ class CommentController extends Controller
     public function index($id){
         $user=Auth::user();
         $item=Item::find($id);
-        $itemUser=User::whereHas('items',function($query)use($id){
+        $itemUser=User::whereHas('sells',function($query)use($id){
         $query->where('item_id',$id);})->first();
         $comments=Comment::where('item_id',$id)->get();
         return view('comment',compact('user','item','comments','itemUser'));

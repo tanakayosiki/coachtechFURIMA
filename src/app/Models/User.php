@@ -64,4 +64,20 @@ class User extends Authenticatable
     public function sells(){
         return $this->hasMany('App\Models\Sell');
     }
+
+    public function roles(){
+        return $this->belongsToMany('App\Models\Role')->withTimestamps();
+    }
+
+    public function shop(){
+        return $this->belongsTo('App\Models\Shop');
+    }
+
+    public function staff(){
+        return $this->hasOne('App\Models\Staff');
+    }
+
+    public function shopComments(){
+        return $this->hasMany('App\Models\ShopComment');
+    }
 }

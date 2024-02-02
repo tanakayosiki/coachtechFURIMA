@@ -1,0 +1,39 @@
+.header {
+    background-color: black;
+}
+
+.logo {
+    width: 80%;
+}
+
+.title {
+    width: 40%;
+}
+
+.page_title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.admin{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content{
+    width: 100%;
+    margin: 150px 0;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(255, 80, 80);
+    border-radius: 3px;
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+}

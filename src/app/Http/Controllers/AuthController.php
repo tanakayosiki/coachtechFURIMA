@@ -19,10 +19,11 @@ class AuthController extends Controller
     public function postRegister(RegisterRequest $request)
     {
         try{
-            User::create([
+            $user=User::create([
                 'email' => $request['email'],
                 'password' => Hash::make($request['password']),
             ]);
+            $user->roles()->attach(3);
             return redirect('/login');
         }catch (\Throwable $th) {
             return redirect('/register');

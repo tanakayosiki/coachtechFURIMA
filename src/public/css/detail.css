@@ -200,3 +200,12 @@ button:disabled{
     background-color: lightgray;
     cursor: pointer;
 }
+
+.shop_space {
+    width: 10%
+}
+
+.shop_icon {
+    width: 100%;
+    margin-left: 5px;
+}

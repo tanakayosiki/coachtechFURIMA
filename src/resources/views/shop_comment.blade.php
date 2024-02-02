@@ -11,25 +11,17 @@
 <body>
     <main class="main">
         <header class="header">
-            <a class="page_title" href="/">
+            <a class="page_title" href="/shop">
                 <p class="logo_space">
                     <img class="logo" src="{{asset('img/logo_img.svg')}}">
                 </p>
                 <p class="title_space">
                     <img class="title" src="{{asset('img/coachtech_img.png')}}">
                 </p>
+                <p class="shop_space">
+                    <img class="shop_icon" src="{{asset('img/shop.svg')}}">
+                </p>
             </a>
-            <div class="text">
-                <input class="input" type="text" name="keyword" placeholder="何をお探しですか？" onchange="this.form.submit()">
-            </div>
-            <div class="link">
-                <a class="auth" href="/logout">ログアウト</a>
-                <a class="auth" href="/mypage">マイページ</a>
-                <form class="sell" action="/sell" method="get">
-                    <button class="submit" type="submit">出品</button>
-                    <input type="hidden" name="id" value="{{optional($user)->id}}">
-                </form>
-            </div>
         </header>
         <div class="detail">
             <div class="img">
@@ -56,29 +48,61 @@
                     </a>
                 </div>
                 <div class="comment">
-                    <form class="comment_form" action="{{route('postComment',$item->id)}}" method="post">
+                    <form class="comment_form" action="{{route('postShopComment',[$item->id,$itemShop->id])}}" method="post">
                         @csrf
                         <div class="comment_list">
                             @foreach($comments as $comment)
+                            @if(empty($comment->user->staff===null))
+                            @if($comment->user->staff->shop_id===$itemShop->id)
                             <div class="by_user">
                                 <div class="user_info">
-                                    @if($comment->user->profile===null)
+                                    @if($comment->user->staff->shop->img===null)
                                     <p class="no_img"></p>
-                                    <p class="no_img">ユーザー名</p>
+                                    <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @else
-                                    @if($comment->user->profile->img===null)
-                                    <p class="no_img"></p>
-                                    @else
-                                    <img class="user_img" src="{{Storage::url($comment->user->profile->img)}}">
-                                    @endif
-                                    <p class="name">{{$comment->user->profile->name}}</p>
-                                    @if($user->id===$itemUser->id)
-                                    <a class="delete" href="{{route('deleteComment',$comment->id)}}">削除</a>
-                                    @endif
+                                    <img class="user_img" src="{{Storage::url($comment->user->staff->shop->img)}}">
+                                    <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @endif
                                 </div>
                                 <p class="content">{{$comment['comment']}}</p>
                             </div>
+                            @else
+                            <div class="user_info">
+                                    @if(empty($comment->room->user->profile===null))
+                                    @if(empty($comment->room->user->profile->img===null))
+                                    <img class="user_img" src="{{Storage::url($comment->room->user->profile->img)}}">
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
+                                    @else
+                                    <p class="no_img"></p>
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
+                                    @endif
+                                    @else
+                                    <p class="no_img"></p>
+                                    <p class="no_name">名前なし</p>
+                                    @endif
+                                </div>
+                                <p class="content">{{$comment['comment']}}</p>
+                            </div>
+                            @endif
+                            @else
+                            <div class="by_user">
+                                <div class="user_info">
+                                    @if(empty($comment->room->user->profile===null))
+                                    @if(empty($comment->room->user->profile->img===null))
+                                    <img class="user_img" src="{{Storage::url($comment->room->user->profile->img)}}">
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
+                                    @else
+                                    <p class="no_img"></p>
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
+                                    @endif
+                                    @else
+                                    <p class="no_img"></p>
+                                    <p class="no_name">名前なし</p>
+                                    @endif
+                                </div>
+                                <p class="content">{{$comment['comment']}}</p>
+                            </div>
+                            @endif
                             @endforeach
                         </div>
                         <p class="new_comment">商品へのコメント</p>

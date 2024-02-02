@@ -1,0 +1,66 @@
+.header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo_space {
+    width: 10%;
+}
+
+.title_space {
+    width: 50%;
+}
+
+.title {
+    width: 100%;
+}
+
+.shop_space {
+    width: 10%
+}
+
+.shop_icon {
+    width: 100%;
+    margin-left: 5px;
+}
+
+.page_title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    width: 30%;
+}
+
+.message {
+    text-align: center;
+    font-weight: bold;
+}
+
+.shop_management{
+    width:50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 100px;
+}
+.content{
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.link{
+    background-color: rgb(255, 80, 80);
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+}

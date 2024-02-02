@@ -1,0 +1,61 @@
+.header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo_space {
+    width: 10%;
+}
+
+.title_space {
+    width: 50%;
+}
+
+.title {
+    width: 100%;
+}
+
+.shop_space {
+    width: 10%
+}
+
+.shop_icon {
+    width: 100%;
+    margin-left: 5px;
+}
+
+.page_title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    width: 30%;
+}
+
+.staff_delete{
+    width:50%;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.staff_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 0 5px;
+}
+
+.submit{
+    background-color: rgb(255, 80, 80);
+    color: white;
+    border: none;
+    border-radius: 3px;
+}

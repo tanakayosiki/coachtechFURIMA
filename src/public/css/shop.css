@@ -8,16 +8,25 @@
     width: 100%;
 }
 
-.logo_space{
-    width:10%;
+.logo_space {
+    width: 10%;
 }
 
-.title_space{
-    width:50%;
+.title_space {
+    width: 50%;
 }
 
 .title {
     width: 100%;
+}
+
+.shop_space{
+    width:10%
+}
+
+.shop_icon{
+    width: 100%;
+    margin-left: 5px;
 }
 
 .page_title {
@@ -27,42 +36,18 @@
     width: 30%;
 }
 
-.text{
-    width:30%;
+.message {
+    text-align: center;
+    font-weight: bold;
 }
 
-.input{
-    width: 100%;
-    padding: 5px;
-}
 
-.link{
-    margin:0 10px 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.auth{
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-}
-
-.submit{
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 3px;
-    margin-left: 30px;
-    padding: 5px 15px;
-}
-
-.list_link{
-    margin-top:30px;
+.list_link {
+    margin-top: 30px;
     border-bottom: 1px black solid;
 }
 
-.rec{
+.rec {
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
@@ -78,12 +63,12 @@
     margin-left: 60px;
 }
 
-.mylist{
+.mylist {
     text-decoration: none;
-        font-weight: bold;
-        font-size: 20px;
-        color: red;
-        margin-left: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    margin-left: 60px;
 }
 
 .no_mylist {
@@ -94,8 +79,8 @@
     margin-left: 60px;
 }
 
-.item_list{
-    width:90%;
+.item_list {
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,31 +88,31 @@
     margin: 20px auto;
 }
 
-.content{
-    width:18%;
+.content {
+    width: 18%;
     position: relative;
     margin-bottom: 20px;
 }
 
-.item_img{
+.item_img {
     width: 100%;
     height: 200px;
 }
 
-.message{
+.message {
     text-align: center;
     font-weight: bold;
 }
 
-.amount{
+.amount {
     position: absolute;
-    top:80%;
+    top: 80%;
     color: black;
 }
 
-.sold{
+.sold {
     position: absolute;
-    top:30%;
+    top: 30%;
     left: 0%;
     width: 100%;
     text-align: center;
@@ -137,7 +122,7 @@
     border-bottom: 20px solid red;
 }
 
-.footer{
+.footer {
     margin-top: auto;
     display: block;
 }

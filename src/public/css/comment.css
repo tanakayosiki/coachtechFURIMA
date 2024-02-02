@@ -20,6 +20,15 @@
     width: 100%;
 }
 
+.shop_space {
+    width: 10%
+}
+
+.shop_icon {
+    width: 100%;
+    margin-left: 5px;
+}
+
 .page_title {
     display: flex;
     align-items: center;

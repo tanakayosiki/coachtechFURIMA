@@ -57,7 +57,24 @@
             <p class="message">{{session('message')}}</p>
             <div class="item_list">
                 @foreach($items as $item)
+                @if(empty($item->shopSell===null))
                 @if($item->buy===null)
+                <div class="content">
+                    <a class="detail" href="{{route('shopDetail',$item->id)}}">
+                        <img class="item_img" src="{{Storage::url($item->img)}}">
+                        <p class="amount">¥{{$item->amount}}</p>
+                    </a>
+                </div>
+                @else
+                <div class="content">
+                    <a class="detail" href="{{route('shopDetail',$item->id)}}">
+                        <img class="item_img" src="{{Storage::url($item->img)}}">
+                        <p class="amount">¥{{$item->amount}}</p>
+                        <p class="sold">sold out</p>
+                    </a>
+                </div>
+                @endif
+                @elseif($item->buy===null)
                 <div class="content">
                     <a class="detail" href="{{route('detail',$item->id)}}">
                         <img class="item_img" src="{{Storage::url($item->img)}}">
@@ -75,6 +92,10 @@
                 @endif
                 @endforeach
             </div>
+            <footer class="footer">
+                <a class="admin_link" href="/admin">管理者ページ</a>
+                <a class="shop_link" href="/shop">ショップページへ</a>
+            </footer>
         </div>
     </main>
 </body>

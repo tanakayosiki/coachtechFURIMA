@@ -28,8 +28,8 @@
             <div class="content">
                 <a class="link" href="{{route('check')}}">ショップとユーザーのメッセージを確認する</a>
             </div>
-            <div class="mail">
-                <a class="send" href="/admin/mail">メール送信</a>
+            <div class="content">
+                <a class="link" href="/admin/mail">メール送信</a>
             </div>
         </div>
     </main>

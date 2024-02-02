@@ -37,6 +37,6 @@ class MailController extends Controller
         foreach($tos as $to){
         Mail::to($to)->send(new AdminMail());
     }
-        return back()->with('message','送信しました');
+        return back()->with('message','メールを送信しました');
     }
 }

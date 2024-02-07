@@ -29,8 +29,13 @@ class ManagementController extends Controller
     public function postNewShop(Request $request){
         $user=Auth::user();
         $id=$user->id;
+        $null=null;
         $img=$request->file('img');
-        $path=Storage::disk('s3')->put('/',optional($img));
+        if(empty($img===$null)){
+        $path=Storage::disk('s3')->put('/',$img);
+        }else{
+            $path=$null;
+        }
         $shop=Shop::create([
             'img'=>$path,
             'name'=>$request['name'],

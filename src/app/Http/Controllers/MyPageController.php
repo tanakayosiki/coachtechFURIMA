@@ -36,9 +36,13 @@ class MyPageController extends Controller
 
     public function postProfile(Request $request){
         $user=Auth::user();
-        $img=$request->file('img');
-        $path=Storage::disk('s3')->put('/',optional($img));
         $null=null;
+        $img=$request->file('img');
+        if(empty($img===$null)){
+        $path=Storage::disk('s3')->put('/',$img);
+        }else{
+            $path=$null;
+        }
         $profile=Profile::where('user_id',$user->id)->first();
         if($profile===$null){
         Profile::create([

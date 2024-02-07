@@ -36,8 +36,12 @@
             @csrf
             <h1>プロフィール設定</h1>
             <div class="img">
+                @if($profile->img===null)
+                <p class="no_img"></p>
+                @else
                 <img class="profile_img" src="{{Storage::disk('s3')->url(optional($profile)->img)}}">
-                <input type="file" name="img" value="{{optional($profile)['img']}}">
+                @endif
+                <input class="file" type="file" name="img" value="{{optional($profile)['img']}}">
             </div>
             <div class="content">
                 <h2>ユーザー名</h2>

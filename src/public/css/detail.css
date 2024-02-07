@@ -106,23 +106,23 @@
 }
 
 h3{
-    margin-right: 40px;
+    width: 40%;
 }
 
 .category{
     background-color: lightgray;
     border-radius: 10px;
-    padding: 0 20px;
-    text-align: center;
+    padding: 0 5px;
 }
 
 .option{
     display: flex;
     align-items: center;
+    margin-top: 50px;
 }
 
 .nice{
-    margin: 60px 20px;
+    margin: 0px 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px 50px;
@@ -132,9 +132,9 @@ h3{
     position: relative;
     width: 0px;
     height: 0px;
-    border-bottom: 50px solid gold;
-    border-right: 75px solid transparent;
-    border-left: 75px solid transparent;
+    border-bottom: 12px solid gold;
+    border-right: 18px solid transparent;
+    border-left: 18px solid transparent;
     transform: rotate(-37deg);
 }
 
@@ -142,10 +142,10 @@ h3{
     content: "";
     position: absolute;
     top: 0;
-    left: -75px;
-    border-bottom: 50px solid gold;
-    border-right: 75px solid transparent;
-    border-left: 75px solid transparent;
+    left: -18px;
+    border-bottom: 12px solid gold;
+    border-right: 18px solid transparent;
+    border-left: 18px solid transparent;
     transform: rotate(-71.5deg);
 }
 
@@ -153,10 +153,10 @@ h3{
     content: "";
     position: absolute;
     top: 0;
-    left: -75px;
-    border-bottom: 50px solid gold;
-    border-right: 75px solid transparent;
-    border-left: 75px solid transparent;
+    left: -18px;
+    border-bottom: 12px solid gold;
+    border-right: 18px solid transparent;
+    border-left: 18px solid transparent;
     transform: rotate(71.5deg);
 }
 
@@ -164,9 +164,9 @@ h3{
     position: relative;
     width: 0px;
     height: 0px;
-    border-bottom: 50px solid lightgray;
-    border-right: 75px solid transparent;
-    border-left: 75px solid transparent;
+    border-bottom: 12px solid lightgray;
+    border-right: 18px solid transparent;
+    border-left: 18px solid transparent;
     transform: rotate(-37deg);
 }
 
@@ -174,10 +174,10 @@ h3{
     content: "";
     position: absolute;
     top: 0;
-    left: -75px;
-    border-bottom: 50px solid lightgray;
-    border-right: 75px solid transparent;
-    border-left: 75px solid transparent;
+    left: -18px;
+    border-bottom: 12px solid lightgray;
+    border-right: 18px solid transparent;
+    border-left: 18px solid transparent;
     transform: rotate(-71.5deg);
 }
 
@@ -185,15 +185,16 @@ h3{
     content: "";
     position: absolute;
     top: 0;
-    left: -75px;
-    border-bottom: 50px solid lightgray;
-    border-right: 75px solid transparent;
-    border-left: 75px solid transparent;
+    left: -18px;
+    border-bottom: 12px solid lightgray;
+    border-right: 18px solid transparent;
+    border-left: 18px solid transparent;
     transform: rotate(71.5deg);
 }
 
 .comment_img{
     width: 30px;
+    margin-left: 30px;
 }
 
 button:disabled{
@@ -208,4 +209,17 @@ button:disabled{
 .shop_icon {
     width: 100%;
     margin-left: 5px;
+}
+
+.count{
+    display: flex;
+    align-items: center;
+}
+
+.nice_count{
+    margin: 10px 32px 15px 32px;
+}
+
+.comment_count{
+    margin-left: 40px;
 }

@@ -68,7 +68,6 @@ Route::get('/shop/commentlist/comment/{id}',[ShopCommentController::class,'staff
 Route::post('/shop/commentlist/comment/{id}',[ShopCommentController::class,'postStaffComment'])->name('postStaffComment');
 Route::get('/shop/comment/delete/{id}',[ShopCommentController::class,'deleteShopComment'])->name('deleteShopComment');
 
-
 Route::middleware(['AdminMiddleware'])->group(function(){
 Route::get('/admin',[AdminController::class,'index']);
 Route::get('/admin/userlist',[AdminController::class,'userList']);

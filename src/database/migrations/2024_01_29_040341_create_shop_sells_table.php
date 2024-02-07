@@ -28,6 +28,6 @@ class CreateShopsellsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopsells');
+        Schema::dropIfExists('shop_sells');
     }
 }

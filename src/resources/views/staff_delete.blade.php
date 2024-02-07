@@ -40,3 +40,6 @@
                 </form>
                 @endforeach
         </div>
+    </main>
+</body>
+</html>

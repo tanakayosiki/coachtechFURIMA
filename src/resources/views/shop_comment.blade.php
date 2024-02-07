@@ -25,7 +25,7 @@
         </header>
         <div class="detail">
             <div class="img">
-                <img class="img_path" src="{{Storage::url($item->img)}}">
+                <img class="img_path" src="{{Storage::disk('s3')->url($item->img)}}">
             </div>
             <div class="overview">
                 <div class="name">
@@ -47,6 +47,9 @@
                         <img class="comment_img" src="{{asset('img/comment.svg')}}">
                     </a>
                 </div>
+                <div class="count">
+                        <p class="nice_count">{{$item->nices->count()}}</p>
+                    </div>
                 <div class="comment">
                     <form class="comment_form" action="{{route('postShopComment',[$item->id,$itemShop->id])}}" method="post">
                         @csrf
@@ -60,7 +63,7 @@
                                     <p class="no_img"></p>
                                     <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @else
-                                    <img class="user_img" src="{{Storage::url($comment->user->staff->shop->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->user->staff->shop->img)}}">
                                     <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @endif
                                 </div>
@@ -70,7 +73,7 @@
                             <div class="user_info">
                                     @if(empty($comment->room->user->profile===null))
                                     @if(empty($comment->room->user->profile->img===null))
-                                    <img class="user_img" src="{{Storage::url($comment->room->user->profile->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->room->user->profile->img)}}">
                                     <p class="name">{{$comment->room->user->profile->name}}</p>
                                     @else
                                     <p class="no_img"></p>
@@ -89,7 +92,7 @@
                                 <div class="user_info">
                                     @if(empty($comment->room->user->profile===null))
                                     @if(empty($comment->room->user->profile->img===null))
-                                    <img class="user_img" src="{{Storage::url($comment->room->user->profile->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->room->user->profile->img)}}">
                                     <p class="name">{{$comment->room->user->profile->name}}</p>
                                     @else
                                     <p class="no_img"></p>

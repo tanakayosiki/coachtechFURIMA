@@ -33,5 +33,6 @@
                 <button class="submit" type="submit">開設する</button>
             </form>
         </div>
+    </main>
 </body>
 </html>

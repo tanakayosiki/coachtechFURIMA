@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/comment.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/comment_list.css') }}">
     <title>FURIMA</title>
 </head>
 <body>
@@ -24,15 +24,20 @@
             </a>
         </header>
         <div class="comment_list">
+            <h1>ユーザー一覧</h1>
+            <p class="item">ユーザー名</p>
             @foreach($rooms as $room)
             <div class="room">
                 @if($room->user->profile===null)
-                <p class="no_name">名前なし</p>
+                <p class="name">名前なし</p>
                 <a class="room_link" href="{{route('staffComment',$room->id)}}">コメントを見る</a>
                 @else
-                <p>{{$room->user->profile->name}}</p>
+                <p class="name">{{$room->user->profile->name}}</p>
                 <a class="room_link" href="{{route('staffComment',$room->id)}}">コメントを見る</a>
                 @endif
             </div>
             @endforeach
         </div>
+    </main>
+</body>
+</html>

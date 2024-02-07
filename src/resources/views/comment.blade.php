@@ -33,7 +33,7 @@
         </header>
         <div class="detail">
             <div class="img">
-                <img class="img_path" src="{{Storage::url($item->img)}}">
+                <img class="img_path" src="{{Storage::disk('s3')->url($item->img)}}">
             </div>
             <div class="overview">
                 <div class="name">
@@ -55,6 +55,10 @@
                         <img class="comment_img" src="{{asset('img/comment.svg')}}">
                     </a>
                 </div>
+                <div class="count">
+                        <p class="nice_count">{{$item->nices->count()}}</p>
+                        <p class="comment_count">{{$item->comments->count()}}</p>
+                </div>
                 <div class="comment">
                     <form class="comment_form" action="{{route('postComment',$item->id)}}" method="post">
                         @csrf
@@ -64,17 +68,17 @@
                                 <div class="user_info">
                                     @if($comment->user->profile===null)
                                     <p class="no_img"></p>
-                                    <p class="no_img">ユーザー名</p>
+                                    <p class="no_name">名前なし</p>
                                     @else
                                     @if($comment->user->profile->img===null)
                                     <p class="no_img"></p>
                                     @else
-                                    <img class="user_img" src="{{Storage::url($comment->user->profile->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->user->profile->img)}}">
                                     @endif
                                     <p class="name">{{$comment->user->profile->name}}</p>
+                                    @endif
                                     @if($user->id===$itemUser->id)
                                     <a class="delete" href="{{route('deleteComment',$comment->id)}}">削除</a>
-                                    @endif
                                     @endif
                                 </div>
                                 <p class="content">{{$comment['comment']}}</p>

@@ -25,7 +25,7 @@
         </header>
         <div class="detail">
             <div class="img">
-                <img class="img_path" src="{{Storage::url($room->item->img)}}">
+                <img class="img_path" src="{{Storage::disk('s3')->url($room->item->img)}}">
             </div>
             <div class="overview">
                 <div class="name">
@@ -46,7 +46,10 @@
                     <a class="comment_link" href="">
                         <img class="comment_img" src="{{asset('img/comment.svg')}}">
                     </a>
-                </div>
+                    </div>
+                    <div class="count">
+                        <p class="nice_count">{{$room->item->nices->count()}}</p>
+                    </div>
                 <div class="comment">
                     <form class="comment_form" action="{{route('postStaffComment',$room->id)}}" method="post">
                         @csrf
@@ -60,10 +63,10 @@
                                     <p class="no_img"></p>
                                     <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @else
-                                    <img class="user_img" src="{{Storage::url($comment->user->staff->shop->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->user->staff->shop->img)}}">
                                     <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @endif
-                                    <a class="delete" href="{{route('deleteComment',$comment->id)}}">削除</a>
+                                    <a class="delete" href="{{route('deleteShopComment',$comment->id)}}">削除</a>
                                 </div>
                                 <p class="content">{{$comment['comment']}}</p>
                             </div>
@@ -71,16 +74,21 @@
                             @else
                             <div class="by_user">
                                 <div class="user_info">
-                                    @if($comment->room->user->profile===null)
+                                    @if(empty($comment->room->user->profile===null))
+                                    @if($comment->room->user->profile->img===null)
+                                    <p class="no_img"></p>
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
+                                    @else
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->room->user->profile->img)}}">
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
+                                    @endif
+                                    @else
                                     <p class="no_img"></p>
                                     <p class="no_name">名前なし</p>
-                                    @else
-                                    <img class="user_img" src="{{Storage::url($comment->room->user->profile->img)}}">
-                                    <p class="name">{{$comment->room->user->profile->name}}</p>
                                     @endif
                                     @if(empty($user->staff===null))
                                     @if($user->staff->shop_id===$itemShop->id)
-                                    <a class="delete" href="{{route('deleteComment',$comment->id)}}">削除</a>
+                                    <a class="delete" href="{{route('deleteShopComment',$comment->id)}}">削除</a>
                                     @endif
                                     @endif
                                 </div>

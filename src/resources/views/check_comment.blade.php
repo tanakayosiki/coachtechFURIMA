@@ -22,7 +22,7 @@
         </header>
         <div class="detail">
             <div class="img">
-                <img class="img_path" src="{{Storage::url($item->img)}}">
+                <img class="img_path" src="{{Storage::disk('s3')->url($item->img)}}">
             </div>
             <div class="overview">
                 <div class="name">
@@ -43,7 +43,7 @@
                                     <p class="no_img"></p>
                                     <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @else
-                                    <img class="user_img" src="{{Storage::url($comment->user->staff->shop->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->user->staff->shop->img)}}">
                                     <p class="name">{{$comment->user->staff->shop->name}}</p>
                                     @endif
                                 </div>
@@ -53,7 +53,7 @@
                             <div class="user_info">
                                     @if(empty($comment->room->user->profile===null))
                                     @if(empty($comment->room->user->profile->img===null))
-                                    <img class="user_img" src="{{Storage::url($comment->room->user->profile->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->room->user->profile->img)}}">
                                     @else
                                     <p class="no_img"></p>
                                     @endif
@@ -72,7 +72,7 @@
                                 <div class="user_info">
                                     @if(empty($comment->room->user->profile===null))
                                     @if(empty($comment->room->user->profile->img===null))
-                                    <img class="user_img" src="{{Storage::url($comment->room->user->profile->img)}}">
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->room->user->profile->img)}}">
                                     @else
                                     <p class="no_img"></p>
                                     @endif

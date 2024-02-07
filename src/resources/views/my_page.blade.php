@@ -37,7 +37,7 @@
                     @if(optional($profile)->img===null)
                     <p class="no_img"></p>
                     @else
-                    <img class="now_img" src="{{Storage::url(optional($profile)->img)}}">
+                    <img class="now_img" src="{{Storage::disk('s3')->url(optional($profile)->img)}}">
                     @endif
                 </div>
                 <div class="name">
@@ -65,14 +65,14 @@
                 @if($myPage->buy===null)
                 <div class="content">
                     <a class="detail" href="{{route('detail',$myPage->id)}}">
-                        <img class="item_img" src="{{Storage::url($myPage->img)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($myPage->img)}}">
                         <p class="amount">¥{{$myPage['amount']}}</p>
                     </a>
                 </div>
                 @else
                 <div class="content">
                     <a class="detail" href="{{route('detail',$myPage->id)}}">
-                        <img class="item_img" src="{{Storage::url($myPage->img)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($myPage->img)}}">
                         <p class="amount">¥{{$myPage['amount']}}</p>
                         <p class="sold">sold out</p>
                     </a>
@@ -97,5 +97,6 @@
                 @endforeach
             </div>
         </div>
+    </main>
 </body>
 </htmL>

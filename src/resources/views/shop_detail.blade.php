@@ -25,7 +25,7 @@
         </header>
         <div class="detail">
             <div class="img">
-                <img class="img_path" src="{{Storage::url($item->img)}}">
+                <img class="img_path" src="{{Storage::disk('s3')->url($item->img)}}">
             </div>
             <div class="overview">
                 <div class="name">
@@ -36,7 +36,8 @@
                 <div class="option">
                     @if($item->is_liked_by_auth_user())
                     <div class="nice">
-                        <a class="star" href="{{route('unnice',$item->id)}}"></a>
+                        <a class="star" href="{{route('unnice',$item->id)}}">
+                        </a>
                     </div>
                     @else
                     <div class="nice">
@@ -58,6 +59,9 @@
                         <img class="comment_img" src="{{asset('img/comment.svg')}}">
                     </a>
                     @endif
+                </div>
+                <div class="count">
+                    <p class="nice_count">{{$item->nices->count()}}</p>
                 </div>
                 <div class="button">
                     @if(empty($item->shopSell->shop_id===optional($shop)->id))
@@ -87,5 +91,6 @@
                 </div>
             </div>
         </div>
+    </main>
 </body>
 </html>

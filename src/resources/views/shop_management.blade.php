@@ -36,5 +36,6 @@
                 <a class="link" href="/shop/sell">出品</a>
             </div>
         </div>
+    </main>
 </body>
 </html>

@@ -37,7 +37,7 @@
             @csrf
             <div class="left_screen">
                 <div class="item_info">
-                    <img class="item_img" src="{{Storage::url($item->img)}}">
+                    <img class="item_img" src="{{Storage::disk('s3')->url($item->img)}}">
                     <div class="name_amount">
                         <p class="name">{{$item['name']}}</p>
                         <p class="amount">¥{{$item['amount']}}</p>
@@ -80,5 +80,6 @@
             </div>
         </form>
         </div>
+    </main>
 </body>
 </html>

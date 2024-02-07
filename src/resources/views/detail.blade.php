@@ -43,7 +43,11 @@
         </header>
         <div class="detail">
             <div class="img">
-                <img class="img_path" src="{{Storage::url($item->img)}}">
+                <img class="img_path" src="{{Storage::disk('s3')->url($item->img)}}">
+                <form class="img_post" action="{{route('imgStore',$item->id)}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <button class="img_button" type="submit">画像を保存する</button>
+                </form>
             </div>
             <div class="overview">
                 <div class="name">
@@ -64,7 +68,11 @@
                     <a class="comment_link" href="{{route('comment',$item->id)}}">
                         <img class="comment_img" src="{{asset('img/comment.svg')}}">
                     </a>
-                </div>
+                    </div>
+                    <div class="count">
+                        <p class="nice_count">{{$item->nices->count()}}</p>
+                        <p class="comment_count">{{$item->comments->count()}}</p>
+                    </div>
                 <div class="button">
                     @if(empty($item->sell->user_id===optional($user)->id))
                     @if($item->buy===null)
@@ -93,5 +101,6 @@
                 </div>
             </div>
         </div>
+    </main>
 </body>
 </html>

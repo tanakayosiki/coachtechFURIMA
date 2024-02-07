@@ -61,14 +61,14 @@
                 @if($item->buy===null)
                 <div class="content">
                     <a class="detail" href="{{route('shopDetail',$item->id)}}">
-                        <img class="item_img" src="{{Storage::url($item->img)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($item->img)}}">
                         <p class="amount">¥{{$item->amount}}</p>
                     </a>
                 </div>
                 @else
                 <div class="content">
                     <a class="detail" href="{{route('shopDetail',$item->id)}}">
-                        <img class="item_img" src="{{Storage::url($item->img)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($item->img)}}">
                         <p class="amount">¥{{$item->amount}}</p>
                         <p class="sold">sold out</p>
                     </a>
@@ -77,14 +77,14 @@
                 @elseif($item->buy===null)
                 <div class="content">
                     <a class="detail" href="{{route('detail',$item->id)}}">
-                        <img class="item_img" src="{{Storage::url($item->img)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($item->img)}}">
                         <p class="amount">¥{{$item['amount']}}</p>
                     </a>
                 </div>
                 @else
                 <div class="content">
                     <a class="detail" href="{{route('detail',$item->id)}}">
-                        <img class="item_img" src="{{Storage::url($item->img)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($item->img)}}">
                         <p class="amount">¥{{$item['amount']}}</p>
                         <p class="sold">sold out</p>
                     </a>

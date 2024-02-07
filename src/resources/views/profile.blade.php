@@ -36,7 +36,7 @@
             @csrf
             <h1>プロフィール設定</h1>
             <div class="img">
-                <img class="profile_img" src="{{Storage::url(optional($profile)->img)}}">
+                <img class="profile_img" src="{{Storage::disk('s3')->url(optional($profile)->img)}}">
                 <input type="file" name="img" value="{{optional($profile)['img']}}">
             </div>
             <div class="content">
@@ -59,5 +59,6 @@
             <button class="update" type="submit">更新する</button>
         </form>
         </div>
+    </main>
 </body>
 </html>

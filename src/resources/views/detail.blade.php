@@ -44,10 +44,6 @@
         <div class="detail">
             <div class="img">
                 <img class="img_path" src="{{Storage::disk('s3')->url($item->img)}}">
-                <form class="img_post" action="{{route('imgStore',$item->id)}}" method="post" enctype="multipart/form-data">
-                @csrf
-                <button class="img_button" type="submit">画像を保存する</button>
-                </form>
             </div>
             <div class="overview">
                 <div class="name">

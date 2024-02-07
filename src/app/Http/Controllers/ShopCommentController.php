@@ -48,7 +48,7 @@ class ShopCommentController extends Controller
     }
 
     public function commentList($id){
-        $rooms=Room::where('item_id',$id)->get();dd($rooms);
+        $rooms=Room::where('item_id',$id)->get();
         return view('comment_list',compact('rooms'));
     }
 

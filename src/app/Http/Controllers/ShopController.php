@@ -27,12 +27,4 @@ class ShopController extends Controller
         })->first();
         return view('shop_detail',compact('shop','item','user','itemShop'));
     }
-
-    public function myList(){
-        $user=Auth::user();
-        $items=Item::whereHas('nices',function($query)use($user){
-        $query->where('user_id',$user->id);
-        })->get();
-        return view('item',compact('user','items'));
-    }
 }

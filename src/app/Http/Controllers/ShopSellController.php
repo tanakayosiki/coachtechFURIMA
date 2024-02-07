@@ -7,6 +7,7 @@ use Auth;
 use App\Models\Shop;
 use App\Models\Item;
 use App\Models\ShopSell;
+use Storage;
 
 class ShopSellController extends Controller
 {
@@ -20,7 +21,7 @@ class ShopSellController extends Controller
     public function shopSell(Request $request){
         $id=$request['id'];
         $img=$request->file('img');
-        $path=$img->store('img_path','public');
+        $path=Storage::disk('s3')->put('/',$img);
         $sell=Item::create([
             'situation'=>$request['situation'],
             'category'=>$request['category'],

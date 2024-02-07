@@ -8,6 +8,7 @@ use Auth;
 use App\Models\Staff;
 use App\Models\Profile;
 use App\Models\User;
+use Storage;
 
 class ManagementController extends Controller
 {
@@ -29,7 +30,7 @@ class ManagementController extends Controller
         $user=Auth::user();
         $id=$user->id;
         $img=$request->file('img');
-        $path=optional($img)->store('img_path','public');
+        $path=Storage::disk('s3')->put('/',optional($img));
         $shop=Shop::create([
             'img'=>$path,
             'name'=>$request['name'],

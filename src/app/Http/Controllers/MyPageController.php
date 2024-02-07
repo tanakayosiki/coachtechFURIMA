@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\Profile;
 use App\Models\Item;
+use Storage;
 
 class MyPageController extends Controller
 {
@@ -36,7 +37,7 @@ class MyPageController extends Controller
     public function postProfile(Request $request){
         $user=Auth::user();
         $img=$request->file('img');
-        $path=optional($img)->store('img_path','public');
+        $path=Storage::disk('s3')->put('/',optional($img));
         $null=null;
         $profile=Profile::where('user_id',$user->id)->first();
         if($profile===$null){

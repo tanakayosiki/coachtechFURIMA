@@ -7,6 +7,7 @@ use App\Models\Item;
 use App\Models\User;
 use App\Models\Sell;
 use App\Models\Profile;
+use Storage;
 
 class SellController extends Controller
 {
@@ -25,7 +26,7 @@ class SellController extends Controller
     public function sell(Request $request){
         $id=$request['id'];
         $img=$request->file('img');
-        $path=$img->store('img_path','public');
+        $path=Storage::disk('s3')->put('/',$img);
         $sell=Item::create([
             'situation'=>$request['situation'],
             'category'=>$request['category'],

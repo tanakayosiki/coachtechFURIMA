@@ -9,22 +9,15 @@
 }
 
 .logo_space{
-    width:10%;
+    width:20%;
 }
 
 .title_space{
-    width:50%;
+    width:100%;
 }
 
 .title {
     width: 100%;
-}
-
-.page_title {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    width: 30%;
 }
 
 .text{
@@ -33,28 +26,6 @@
 
 .input{
     width: 100%;
-    padding: 5px;
-}
-
-.link{
-    margin:0 10px 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.auth{
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-}
-
-.submit{
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 3px;
-    margin-left: 30px;
-    padding: 5px 15px;
 }
 
 .list_link{
@@ -62,51 +33,183 @@
     border-bottom: 1px black solid;
 }
 
-.rec{
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color: red;
-    margin-left: 60px;
+@media screen and (min-width:0px){
+        .content {
+            width: 32%;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .mylist {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            color: red;
+            margin-left: 30px;
+        }
+
+        .no_mylist {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            color: gray;
+            margin-left: 30px;
+        }
+
+        .rec {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            color: red;
+            margin-left: 30px;
+        }
+
+        .no_rec {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            color: gray;
+            margin-left: 30px;
+        }
+        .text {
+            width: 30%;
+        }
+    
+        .input {
+            width: 100%;
+        }
+    
+        .link {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 70%;
+            margin: 0 0 0 5px;
+        }
+    
+        .auth {
+            color: white;
+            text-decoration: none;
+            font-size: 10px;
+        }
+    
+        .submit {
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            padding: 0px 8px;
+        }
+
+        .footer {
+            display: block;
+            background-color: black;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 70%;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin: 0 5px;
+            width: 30%;
+        }
 }
 
-.no_rec {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color: gray;
-    margin-left: 60px;
-}
+@media screen and (min-width:768px){
+        .content{
+        width:19%;
+        position: relative;
+        margin-bottom: 20px;
+        }
 
-.mylist{
-    text-decoration: none;
-        font-weight: bold;
-        font-size: 20px;
-        color: red;
-        margin-left: 60px;
-}
+        .mylist {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            color: red;
+            margin-left: 60px;
+        }
 
-.no_mylist {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color: gray;
-    margin-left: 60px;
+        .no_mylist {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            color: gray;
+            margin-left: 60px;
+        }
+
+        .rec {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            color: red;
+            margin-left: 60px;
+        }
+    
+        .no_rec {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            color: gray;
+            margin-left: 60px;
+        }
+    
+        .text {
+            width: 30%;
+        }
+    
+        .input {
+            width: 100%;
+            padding: 0px;
+        }
+    
+        .link {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+            margin: 0 0 0 10px;
+        }
+    
+        .auth {
+            color: white;
+            text-decoration: none;
+            font-size: 90%;
+        }
+    
+        .submit {
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 10px;
+        }
+
+        .footer {
+            display: block;
+            background-color: black;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 90%;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            width: 20%;
+        }
 }
 
 .item_list{
-    width:90%;
+    max-width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin: 20px auto;
-}
-
-.content{
-    width:18%;
-    position: relative;
-    margin-bottom: 20px;
 }
 
 .item_img{
@@ -122,8 +225,10 @@
 .amount{
     position: absolute;
     top:80%;
+    left: 0%;
     color: black;
     background-color: white;
+    font-size: 10%;
 }
 
 .sold{
@@ -136,14 +241,6 @@
     background-color: white;
     border-top: 20px solid red;
     border-bottom: 20px solid red;
-}
-
-.footer{
-    display: block;
-    background-color: black;
-    text-align: center;
-    padding: 10px 0;
-
 }
 
 .admin_link{

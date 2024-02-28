@@ -3,11 +3,19 @@
 }
 
 .logo {
-    width: 80%;
+    width: 100%;
+}
+
+.logo_space {
+    width: 20%;
+}
+
+.title_space {
+    width: 100%;
 }
 
 .title {
-    width: 40%;
+    width: 100%;
 }
 
 .page_title {
@@ -23,13 +31,9 @@
     border-bottom: 1px solid black;
 }
 
-.check{
-    width: 50%;
-    margin: 0 auto;
-}
-
 h1 {
     text-align: center;
+    font-size: 25px;
 }
 
 .check_list {
@@ -39,29 +43,84 @@ h1 {
     border-bottom: 1px solid black;
 }
 
-.user_name,
-.no_name {
-    margin: 0;
-    width: 30%;
-}
-
-.shop_name{
-    margin: 0;
-    width: 30%;
-}
-
 .item {
     width: 30%;
     margin: 0;
     font-weight: bolder;
 }
 
-.room_link{
-    margin-left: auto;
-    color: white;
-    background-color: rgb(255, 80, 80);
-    border: none;
-    border-radius: 3px;
-    text-decoration: none;
-    padding: 3px 5px;
+@media screen and (min-width:0px){
+    .check {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .user_name,
+        .no_name {
+            margin: 0;
+            width: 30%;
+            font-size: 12px;
+        }
+
+        .shop_name {
+            margin: 0;
+            width: 30%;
+            font-size: 12px;
+        }
+
+        .room_link {
+            margin-left: auto;
+            color: white;
+            background-color: rgb(255, 80, 80);
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 3px 5px;
+            font-size: 12px;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 30%;
+        }
+}
+
+@media screen and (min-width:768px){
+    .check {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 20%;
+        }
+
+        .user_name,
+        .no_name {
+            margin: 0;
+            width: 30%;
+            font-size: 16px;
+        }
+    
+        .shop_name {
+            margin: 0;
+            width: 30%;
+            font-size: 16px;
+        }
+    
+        .room_link {
+            margin-left: auto;
+            color: white;
+            background-color: rgb(255, 80, 80);
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 3px 5px;
+            font-size: 16px;
+        }
 }

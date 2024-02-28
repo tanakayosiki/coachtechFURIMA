@@ -3,21 +3,30 @@
 }
 
 .logo {
-    width: 80%;
+    width: 100%;
+}
+
+.logo_space {
+    width: 20%;
+}
+
+.title_space {
+    width: 100%;
 }
 
 .title {
-    width: 40%;
+    width: 100%;
 }
 
 .page_title {
     display: flex;
     align-items: center;
     margin-left: 10px;
+    width:30%;
 }
 
 .register {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -69,4 +78,22 @@
 .error{
     color: red;
     margin: 0;
+}
+
+@media screen and (min-width:0px) {
+    .page_title {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 30%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .page_title {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 20%;
+    }
 }

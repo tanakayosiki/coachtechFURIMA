@@ -9,11 +9,11 @@
 }
 
 .logo_space {
-    width: 10%;
+    width: 20%;
 }
 
 .title_space {
-    width: 50%;
+    width: 100%;
 }
 
 .title {
@@ -21,7 +21,7 @@
 }
 
 .shop_space {
-    width: 10%
+    width: 15%
 }
 
 .shop_icon {
@@ -29,11 +29,22 @@
     margin-left: 5px;
 }
 
-.page_title {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    width: 30%;
+@media screen and (min-width:0px){
+    .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 40%;
+        }
+}
+
+@media screen and (min-width:768px) {
+    .page_title {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 30%;
+    }
 }
 
 .invite{
@@ -43,6 +54,7 @@
 
 h1{
     text-align: center;
+    font-size: 25px;
     margin-bottom: 50px;
 }
 

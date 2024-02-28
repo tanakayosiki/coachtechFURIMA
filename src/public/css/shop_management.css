@@ -9,11 +9,11 @@
 }
 
 .logo_space {
-    width: 10%;
+    width: 20%;
 }
 
 .title_space {
-    width: 50%;
+    width: 100%;
 }
 
 .title {
@@ -21,7 +21,7 @@
 }
 
 .shop_space {
-    width: 10%
+    width: 15%
 }
 
 .shop_icon {
@@ -41,14 +41,9 @@
     font-weight: bold;
 }
 
-.shop_management{
-    width:50%;
-    margin: 0 auto;
-    text-align: center;
-}
-
 h1{
-    margin-bottom: 100px;
+    margin-bottom: 70px;
+    font-size: 25px;
 }
 .content{
     width: 100%;
@@ -63,4 +58,34 @@ h1{
     display: block;
     text-decoration: none;
     padding: 5px;
+}
+
+@media screen and (min-width:0px){
+    .shop_management {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 40%;
+        }
+}
+
+@media screen and (min-width:768px){
+    .shop_management {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 30%;
+        }
 }

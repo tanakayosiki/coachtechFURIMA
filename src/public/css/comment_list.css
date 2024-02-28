@@ -9,7 +9,7 @@
 }
 
 .logo_space {
-    width: 10%;
+    width: 20%;
 }
 
 .title_space {
@@ -29,25 +29,14 @@
     margin-left: 5px;
 }
 
-.page_title {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    width: 30%;
-}
-
 .message {
     text-align: center;
     font-weight: bold;
 }
 
-.comment_list{
-    width:50%;
-    margin: 0 auto;
-}
-
 h1{
     text-align: center;
+    font-size: 25px;
 }
 
 .item{
@@ -67,12 +56,52 @@ h1{
     margin: 0;
 }
 
-.room_link {
-    margin-left: auto;
-    color: white;
-    background-color: rgb(255, 80, 80);
-    border: none;
-    border-radius: 3px;
-    text-decoration: none;
-    padding: 0px 5px;
+@media screen and (min-width:0px){
+    .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 60%;
+        }
+
+        .comment_list {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .room_link {
+            margin-left: auto;
+            color: white;
+            background-color: rgb(255, 80, 80);
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 0px 5px;
+            font-size: 12px;
+        }
+}
+
+@media screen and (min-width:768px){
+    .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 20%;
+        }
+
+        .comment_list {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .room_link {
+            margin-left: auto;
+            color: white;
+            background-color: rgb(255, 80, 80);
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 0px 5px;
+            font-size: 16px;
+        }
 }

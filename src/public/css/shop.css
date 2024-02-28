@@ -9,11 +9,11 @@
 }
 
 .logo_space {
-    width: 10%;
+    width: 20%;
 }
 
 .title_space {
-    width: 50%;
+    width: 100%;
 }
 
 .title {
@@ -21,7 +21,7 @@
 }
 
 .shop_space{
-    width:10%
+    width:15%
 }
 
 .shop_icon{
@@ -29,69 +29,23 @@
     margin-left: 5px;
 }
 
-.page_title {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    width: 30%;
-}
-
 .message {
     text-align: center;
     font-weight: bold;
 }
-
 
 .list_link {
     margin-top: 30px;
     border-bottom: 1px black solid;
 }
 
-.rec {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color: red;
-    margin-left: 60px;
-}
-
-.no_rec {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color: gray;
-    margin-left: 60px;
-}
-
-.mylist {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color: red;
-    margin-left: 60px;
-}
-
-.no_mylist {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color: gray;
-    margin-left: 60px;
-}
-
 .item_list {
-    width: 90%;
+    max-width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin: 20px auto;
-}
-
-.content {
-    width: 18%;
-    position: relative;
-    margin-bottom: 20px;
 }
 
 .item_img {
@@ -109,6 +63,7 @@
     top: 80%;
     color: black;
     background-color: white;
+    font-size: 10%;
 }
 
 .sold {
@@ -123,15 +78,117 @@
     border-bottom: 20px solid red;
 }
 
-.footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: black;
-    padding: 10px 0;
-}
-
 .admin_link,.new_shop,.shop_management,.back_link{
     color: white;
     text-decoration: none;
+}
+
+@media screen and (min-width:0px) {
+    .content {
+        width: 32%;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .mylist {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: red;
+        margin-left: 30px;
+    }
+
+    .no_mylist {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: gray;
+        margin-left: 30px;
+    }
+
+    .rec {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: red;
+        margin-left: 30px;
+    }
+
+    .no_rec {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: gray;
+        margin-left: 30px;
+    }
+
+    .footer {
+        display: block;
+        background-color: black;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 60%;
+    }
+
+    .page_title {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 40%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .content {
+        width: 19%;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .mylist {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: red;
+        margin-left: 60px;
+    }
+
+    .no_mylist {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: gray;
+        margin-left: 60px;
+    }
+
+    .rec {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: red;
+        margin-left: 60px;
+    }
+
+    .no_rec {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: gray;
+        margin-left: 60px;
+    }
+
+    .footer {
+        display: block;
+        background-color: black;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 80%;
+    }
+
+    .page_title {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 30%;
+    }
 }

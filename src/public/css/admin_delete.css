@@ -3,11 +3,19 @@
 }
 
 .logo {
-    width: 80%;
+    width: 100%;
+}
+
+.logo_space {
+    width: 20%;
+}
+
+.title_space {
+    width: 100%;
 }
 
 .title {
-    width: 40%;
+    width: 100%;
 }
 
 .page_title {
@@ -23,6 +31,7 @@
 
 h1{
     text-align: center;
+    font-size: 25px;
 }
 
 .message{
@@ -54,16 +63,88 @@ h1{
     width: 50%;
 }
 
-.item{
-    width: 30%;
-    margin: 0;
-    font-weight: bolder;
+@media screen and (min-width:0px){
+    .admin_delete {
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .item:nth-of-type(2){
+            width: 50%;
+            margin: 0;
+            font-weight: bolder;
+            font-size: 12px;
+        }
+
+        .name,
+        .no_name {
+            margin: 0;
+            width: 30%;
+            font-size: 12px;
+        }
+    
+        .email {
+            margin: 0;
+            width: 50%;
+            font-size: 12px;
+        }
+
+        .submit {
+            margin-left: auto;
+            color: white;
+            background-color: rgb(255, 80, 80);
+            border: none;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+
+        .item{
+            width: 30%;
+                margin: 0;
+                font-weight: bolder;
+                font-size: 12px;
+        }
+
+        .page_title {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 30%;
+    }
 }
 
-.submit{
-    margin-left: auto;
-    color: white;
-    background-color: rgb(255, 80, 80);
-    border: none;
-    border-radius: 3px;
+@media screen and (min-width:768px){
+    .admin_delete {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .name,
+        .no_name {
+            margin: 0;
+            width: 30%;
+            font-size: 16px;
+        }
+    
+        .email {
+            margin: 0;
+            width: 50%;
+            font-size: 16px;
+        }
+
+        .submit {
+            margin-left: auto;
+            color: white;
+            background-color: rgb(255, 80, 80);
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .page_title {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 20%;
+        }
 }

@@ -9,11 +9,11 @@
 }
 
 .logo_space {
-    width: 10%;
+    width: 20%;
 }
 
 .title_space {
-    width: 50%;
+    width: 100%;
 }
 
 .title {
@@ -21,19 +21,12 @@
 }
 
 .shop_space {
-    width: 10%
+    width: 15%
 }
 
 .shop_icon {
     width: 100%;
     margin-left: 5px;
-}
-
-.page_title {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    width: 30%;
 }
 
 .staff_delete{
@@ -43,6 +36,7 @@
 
 h1{
     text-align: center;
+    font-size: 25px;
 }
 
 .staff_list{
@@ -58,4 +52,32 @@ h1{
     color: white;
     border: none;
     border-radius: 3px;
+}
+
+@media screen and (min-width:0px){
+    .staff_delete {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 40%;
+        }
+}
+
+@media screen and (min-width:768px){
+    .staff_delete {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .page_title {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 30%;
+        }
 }

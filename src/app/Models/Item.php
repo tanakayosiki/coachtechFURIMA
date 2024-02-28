@@ -12,10 +12,6 @@ class Item extends Model
 
     protected $fillable=['situation','category','img','name','detail','brand','amount'];
 
-    public function user(){
-        return $this->belongsTo('App\Models\User')->withTimestamps();
-    }
-
     public function buy(){
         return $this->hasOne('App\Models\Buy');
     }

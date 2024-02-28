@@ -11,7 +11,7 @@ class Room extends Model
 
     protected $fillable=['shop_id','user_id','item_id'];
 
-    public function comments(){
+    public function shopComments(){
         return $this->hasMany('App\Models\ShopComment');
     }
 

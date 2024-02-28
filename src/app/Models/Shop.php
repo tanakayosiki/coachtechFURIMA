@@ -11,15 +11,15 @@ class Shop extends Model
 
     protected $fillable=['img','name','detail'];
 
-    public function users(){
-        return $this->belongsToMany('App\Models\User')->withTimestamps();
-    }
-
     public function staffs(){
         return $this->hasMany('App\Models\Staff');
     }
 
     public function shopSells(){
         return $this->hasMany('App\Models\ShopSell');
+    }
+
+    public function rooms(){
+        return $this->hasMany('App\Models\Room');
     }
 }

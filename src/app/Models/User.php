@@ -41,10 +41,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function items(){
-        return $this->belongsToMany('App\Models\Item');
-    }
-
     public function profile(){
         return $this->hasOne('App\Models\Profile');
     }
@@ -69,15 +65,15 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Role')->withTimestamps();
     }
 
-    public function shop(){
-        return $this->belongsTo('App\Models\Shop');
-    }
-
     public function staff(){
         return $this->hasOne('App\Models\Staff');
     }
 
     public function shopComments(){
         return $this->hasMany('App\Models\ShopComment');
+    }
+
+    public function rooms(){
+        return $this->hasMany('App\Models\Room');
     }
 }

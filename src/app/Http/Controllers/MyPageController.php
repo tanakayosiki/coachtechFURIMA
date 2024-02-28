@@ -7,6 +7,7 @@ use Auth;
 use App\Models\Profile;
 use App\Models\Item;
 use Storage;
+use App\Http\Requests\ProfileRequest;
 
 class MyPageController extends Controller
 {
@@ -34,7 +35,7 @@ class MyPageController extends Controller
         return view('profile',compact('user','profile'));
     }
 
-    public function postProfile(Request $request){
+    public function postProfile(ProfileRequest $request){
         $user=Auth::user();
         $null=null;
         $img=$request->file('img');

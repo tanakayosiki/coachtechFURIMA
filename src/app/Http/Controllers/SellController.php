@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Sell;
 use App\Models\Profile;
 use Storage;
+use App\Http\Requests\SellRequest;
 
 class SellController extends Controller
 {
@@ -23,7 +24,7 @@ class SellController extends Controller
         }
     }
 
-    public function sell(Request $request){
+    public function sell(SellRequest $request){
         $id=$request['id'];
         $img=$request->file('img');
         $path=Storage::disk('s3')->put('/',$img);

@@ -8,6 +8,7 @@ use App\Models\Shop;
 use App\Models\Item;
 use App\Models\ShopSell;
 use Storage;
+use App\Http\Requests\SellRequest;
 
 class ShopSellController extends Controller
 {
@@ -18,7 +19,7 @@ class ShopSellController extends Controller
         return view('shop_sell',compact('shop'));
     }
 
-    public function shopSell(Request $request){
+    public function shopSell(SellRequest $request){
         $id=$request['id'];
         $img=$request->file('img');
         $path=Storage::disk('s3')->put('/',$img);

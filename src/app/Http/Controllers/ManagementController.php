@@ -7,16 +7,20 @@ use App\Models\Shop;
 use Auth;
 use App\Models\Staff;
 use App\Models\Profile;
-use App\Models\User;
 use Storage;
+use DB;
 
 class ManagementController extends Controller
 {
     public function newShop(){
         $user=Auth::user();
+        $role=DB::table('role_user')->where('user_id',$user->id)->first();
         $profile=Profile::where('user_id',$user->id)->first();
         $null=null;
         $shop=Staff::where('user_id',$user->id)->first();
+        if($role->role_id===1){
+            return redirect('/shop')->with('message','管理者はご利用できません');
+        }
         if($profile===$null){
             return redirect('/')->with('message','プロフィール登録が完了していません。マイページより登録をお願い致します。');
         }elseif(empty($shop===$null)){
@@ -45,7 +49,7 @@ class ManagementController extends Controller
             'user_id'=>$id,
             'shop_id'=>$shop->id,
         ]);
-        $user->roles()->attach(2);
+        $user->roles()->sync(2);
         return redirect('/')->with('message','開設ありがとうございます!');
     }
 

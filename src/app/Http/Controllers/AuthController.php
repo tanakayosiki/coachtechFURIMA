@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
+use DB;
 
 class AuthController extends Controller
 {
@@ -18,12 +19,18 @@ class AuthController extends Controller
 
     public function postRegister(RegisterRequest $request)
     {
+        $role=DB::table('role_user')->where('role_id','1')->first();
+        $null=null;
         try{
             $user=User::create([
                 'email' => $request['email'],
                 'password' => Hash::make($request['password']),
             ]);
+            if($role===$null){
+            $user->roles()->attach(1);
+            }else{
             $user->roles()->attach(3);
+            }
             return redirect('/login');
         }catch (\Throwable $th) {
             return redirect('/register');

@@ -64,18 +64,33 @@
                 @foreach($myPages as $myPage)
                 @if($myPage->buy===null)
                 <div class="content">
+                    @if($myPage->shopSell===null)
                     <a class="detail" href="{{route('detail',$myPage->id)}}">
                         <img class="item_img" src="{{Storage::disk('s3')->url($myPage->img)}}">
                         <p class="amount">¥{{$myPage['amount']}}</p>
                     </a>
+                    @else
+                    <a class="detail" href="{{route('shopDetail',$myPage->id)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($myPage->img)}}">
+                        <p class="amount">¥{{$myPage['amount']}}</p>
+                    </a>
+                    @endif
                 </div>
                 @else
                 <div class="content">
+                    @if($myPage->shopSell===null)
                     <a class="detail" href="{{route('detail',$myPage->id)}}">
                         <img class="item_img" src="{{Storage::disk('s3')->url($myPage->img)}}">
                         <p class="amount">¥{{$myPage['amount']}}</p>
                         <p class="sold">sold out</p>
                     </a>
+                    @else
+                    <a class="detail" href="{{route('shopDetail',$myPage->id)}}">
+                        <img class="item_img" src="{{Storage::disk('s3')->url($myPage->img)}}">
+                        <p class="amount">¥{{$myPage['amount']}}</p>
+                        <p class="sold">sold out</p>
+                    </a>
+                    @endif
                     @if($myPage->buy->payment==='クレジットカード払い')
                     <form class="stripe" action="{{route('stripe.charge',$myPage->id)}}" method="POST">
                         @csrf

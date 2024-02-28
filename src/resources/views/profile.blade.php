@@ -50,15 +50,26 @@
             <div class="content">
                 <h2>ユーザー名</h2>
                 <input class="text_input" type="text" name="name" value="{{optional($profile)['name']}}">
+                @error('name')
+                <p class="error">{{$errors->first('name')}}</p>
+                @enderror
+                <p class="req">※必須</p>
             </div>
             <div class="content">
                 <h2>郵便番号</h2>
                 <input class="text_input" type="text" name="post_code" value="{{optional($profile)['post_code']}}">
-                <p class="hyphen">※ハイフンを含んで入力してください</p>
+                @error('post_code')
+                <p class="error">{{$errors->first('post_code')}}</p>
+                @enderror
+                <p class="req">※ハイフンを含めて入力してください、必須</p>
             </div>
             <div class="content">
                 <h2>住所</h2>
                 <input class="text_input" type="text" name="address" value="{{optional($profile)['address']}}">
+                @error('address')
+                <p class="error">{{$errors->first('address')}}</p>
+                @enderror
+                <p class="req">※必須</p>
             </div>
             <div class="content">
                 <h2>建物名</h2>

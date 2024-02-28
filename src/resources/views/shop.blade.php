@@ -65,5 +65,6 @@
                 <a class="back_link" href="/">トップページへ</a>
             </footer>
         </div>
+    </main>
 </body>
 </html>

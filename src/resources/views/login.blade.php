@@ -12,10 +12,10 @@
     <main class="main">
         <header class="header">
             <a class="page_title" href="/">
-                <p>
+                <p class="logo_space">
                     <img class="logo" src="{{asset('img/logo_img.svg')}}">
                 </p>
-                <p>
+                <p class="title_space">
                     <img class="title" src="{{asset('img/coachtech_img.png')}}">
                 </p>
             </a>

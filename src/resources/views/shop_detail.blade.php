@@ -11,7 +11,7 @@
 <body>
     <main class="main">
         <header class="header">
-            <a class="page_title" href="/shop">
+            <a class="shop_page_title" href="/shop">
                 <p class="logo_space">
                     <img class="logo" src="{{asset('img/logo_img.svg')}}">
                 </p>

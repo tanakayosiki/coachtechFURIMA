@@ -12,10 +12,10 @@
     <main class="main">
         <header class="header">
             <a class="page_title" href="/">
-                <p>
+                <p class="logo_space">
                     <img  class="logo" src="{{asset('img/logo_img.svg')}}">
                 </p>
-                <p>
+                <p class="title_space">
                     <img  class="title" src="{{asset('img/coachtech_img.png')}}">
                 </p>
             </a>
@@ -26,7 +26,7 @@
                 <a class="link" href="/admin/userlist">ユーザーを削除する</a>
             </div>
             <div class="content">
-                <a class="link" href="{{route('check')}}">ショップとユーザーのメッセージを確認する</a>
+                <a class="link" href="{{route('check')}}">コメント確認</a>
             </div>
             <div class="content">
                 <a class="link" href="/admin/mail">メール送信</a>

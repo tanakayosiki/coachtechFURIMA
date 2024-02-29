@@ -8,7 +8,7 @@ executors:
     environment:
       - APP_DEBUG: true
       - APP_ENV: testing
-      - APP_KEY: base64:oQbVvWs3tHsouVVGIhue/ZQX3p7OuQ8Z4s6oDOhXK7I=
+      - APP_KEY: base64:nWjwxCgZecswj6qP0eCD/RFYGN82Yiz0PlnNM5WITxw=
       - DB_CONNECTION: circle_testing
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
     working_directory: ~/repo

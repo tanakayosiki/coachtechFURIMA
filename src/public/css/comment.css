@@ -111,6 +111,13 @@
             margin: 0 5px;
             width: 30%;
         }
+
+        .shop_page_title {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            width: 40%;
+        }
 }
 
 @media screen and (min-width:768px){
@@ -185,6 +192,13 @@
             align-items: center;
             margin: 0 10px;
             width: 20%;
+        }
+
+        .shop_page_title {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            width: 30%;
         }
 }
 

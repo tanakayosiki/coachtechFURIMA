@@ -206,7 +206,7 @@
         .sell_item {
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 20px;
             color: red;
             margin-left: 60px;
         }
@@ -214,7 +214,7 @@
         .no_sell_item {
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 20px;
             color: gray;
             margin-left: 60px;
         }
@@ -222,7 +222,7 @@
         .buy_item {
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 20px;
             color: red;
             margin-left: 60px;
         }
@@ -230,7 +230,7 @@
         .no_buy_item {
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 20px;
             color: gray;
             margin-left: 60px;
         }
@@ -269,7 +269,7 @@
 }
 
 .item_list {
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -286,8 +286,6 @@
     text-align: center;
     font-weight: bold;
 }
-
-
 
 .sold {
     position: absolute;

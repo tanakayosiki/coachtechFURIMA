@@ -123,7 +123,8 @@
     }
 
     .footer {
-        display: block;
+        display: flex;
+        justify-content: space-around;
         background-color: black;
         text-align: center;
         padding: 10px 0;
@@ -178,11 +179,11 @@
     }
 
     .footer {
-        display: block;
+        display: flex;
+        justify-content: space-around;
         background-color: black;
-        text-align: center;
         padding: 10px 0;
-        font-size: 80%;
+        font-size: 90%;
     }
 
     .page_title {

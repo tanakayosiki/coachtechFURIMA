@@ -91,6 +91,17 @@
             margin: 0 5px;
             width: 30%;
         }
+
+        .error {
+            margin: 0;
+            color: red;
+            font-size: 12px;
+        }
+    
+        .req {
+            margin: 0;
+            font-size: 12px;
+        }
 }
 
 @media screen and (min-width:768px){
@@ -140,6 +151,17 @@
             margin: 0 10px;
             width: 20%;
         }
+
+        .error {
+            margin: 0;
+            color: red;
+            font-size: 16px;
+        }
+    
+        .req {
+            margin: 0;
+            font-size: 16px;
+        }
 }
 
 label{
@@ -170,30 +192,4 @@ label{
     border-radius: 3px;
     font-weight: bold;
     padding: 5px 0;
-}
-
-@media screen and (min-width:0px){
-    .error {
-            margin: 0;
-            color: red;
-            font-size: 12px;
-        }
-
-        .req {
-            margin: 0;
-            font-size: 12px;
-        }
-}
-
-@media screen and (min-width:768px){
-    .error {
-            margin: 0;
-            color: red;
-            font-size: 16px;
-        }
-
-        .req {
-            margin: 0;
-            font-size: 16px;
-        }
 }

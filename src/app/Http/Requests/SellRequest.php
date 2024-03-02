@@ -41,7 +41,7 @@ class SellRequest extends FormRequest
             'name.required'=>'入力は必須です',
             'detail.required'=>'入力は必須です',
             'amount.required'=>'入力は必須です',
-            'amount.max'=>'100万円以内で入力してください'
+            'amount.max'=>'999万9999円以内で入力してください'
         ];
     }
 }

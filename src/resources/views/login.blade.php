@@ -24,6 +24,7 @@
         <form class="form" action="/login" method="post">
             @csrf
             <h1 class="login_header">ログイン</h1>
+            <p class="message">{{session('message')}}</p>
             <div class="content">
                 <div class="email">
                     <p class="item">メールアドレス</p>

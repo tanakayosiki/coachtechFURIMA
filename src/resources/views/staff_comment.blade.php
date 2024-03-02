@@ -70,6 +70,20 @@
                                 </div>
                                 <p class="content">{{$comment['comment']}}</p>
                             </div>
+                            @else
+                            <div class="by_user">
+                                <div class="user_info">
+                                    @if($comment->user->staff->shop->img===null)
+                                    <p class="no_img"></p>
+                                    <p class="name">{{$comment->user->staff->shop->name}}</p>
+                                    @else
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->user->staff->shop->img)}}">
+                                    <p class="name">{{$comment->user->staff->shop->name}}</p>
+                                    @endif
+                                    <a class="delete" href="{{route('deleteShopComment',$comment->id)}}">削除</a>
+                                </div>
+                                <p class="content">{{$comment['comment']}}</p>
+                            </div>
                             @endif
                             @else
                             <div class="by_user">

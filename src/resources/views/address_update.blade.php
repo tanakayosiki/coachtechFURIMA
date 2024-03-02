@@ -17,8 +17,16 @@
                 @csrf
                 <h2>郵便番号</h2>
                 <input type="text" name="post_code" value="{{$profile['post_code']}}">
+                @error('post_code')
+                <p class="error">{{$errors->first('post_code')}}</p>
+                @enderror
+                <p class="req">※ハイフンを含めて入力してください、必須</p>
                 <h2>住所</h2>
                 <input type="text" name="address" value="{{$profile['address']}}">
+                @error('address')
+                <p class="error">{{$errors->first('address')}}</p>
+                @enderror
+                <p class="req">必須</p>
                 <h2>建物名</h2>
                 <input type="text" name="building" value="{{optional($profile)['building']}}">
                 <button type="submit">更新する</button>

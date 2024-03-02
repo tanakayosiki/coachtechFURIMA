@@ -11,7 +11,7 @@
 <body>
     <main class="main">
         <header class="header">
-            <a class="page_title" href="/shop">
+            <a class="shop_page_title" href="/shop">
                 <p class="logo_space">
                     <img class="logo" src="{{asset('img/logo_img.svg')}}">
                 </p>
@@ -70,7 +70,8 @@
                                 <p class="content">{{$comment['comment']}}</p>
                             </div>
                             @else
-                            <div class="user_info">
+                            <div class="by_user">
+                                <div class="user_info">
                                     @if(empty($comment->room->user->profile===null))
                                     @if(empty($comment->room->user->profile->img===null))
                                     <img class="user_img" src="{{Storage::disk('s3')->url($comment->room->user->profile->img)}}">

@@ -7,6 +7,7 @@ use Auth;
 use App\Models\Profile;
 use App\Models\Item;
 use App\Models\Buy;
+use App\Http\Requests\AddressUpdateRequest;
 
 class BuyController extends Controller
 {
@@ -42,7 +43,7 @@ class BuyController extends Controller
         return view('address_update',compact('profile','item'));
     }
 
-    public function postAddress(Request $request,$id){
+    public function postAddress(AddressUpdateRequest $request,$id){
         $user=Auth::user();
         $profile=Profile::where('user_id',$user->id)->first();
         $item=Item::find($id);

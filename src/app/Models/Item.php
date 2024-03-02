@@ -32,6 +32,10 @@ class Item extends Model
         return $this->hasOne('App\Models\ShopSell');
     }
 
+    public function rooms(){
+        return $this->hasMany('App\Models\Room');
+    }
+
     public function is_liked_by_auth_user(){
     $id = Auth::id();
 

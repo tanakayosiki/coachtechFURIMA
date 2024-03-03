@@ -86,6 +86,7 @@ jobs:
     executor:
       name: laravel-circleci
     steps:
+      - checkout
       - install-dockerize
       - install-php-extensions
       - restore-cache-composer

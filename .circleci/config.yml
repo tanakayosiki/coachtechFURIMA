@@ -72,7 +72,7 @@ commands:
     steps:
       - run:
           name: Migration & Seeding
-          command: php artisan migrate --seed
+          command: php artisan migrate
           working_directory: src
   test-unittest:
     steps:

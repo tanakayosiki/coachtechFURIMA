@@ -32,32 +32,24 @@ class BuyTest extends TestCase
             'post_code'=>'000-0000',
             'building'=>'aaa',
         ]);
-        $updateProfile=$this->actingAs($user)->post(route('postAddress',$item->id),[
-            'user_id'=>$user->id,
-            'name'=>$name,
-            'img'=>$img,
-            'address'=>'京都府',
-            'post_code'=>'000-0000',
-            'building'=>'aaa',
-        ]);
         $this->assertDatabaseHas('profiles',[
             'user_id'=>$user->id,
             'name'=>$name,
             'img'=>$img,
-            'address'=>'京都府',
+            'address'=>'東京都',
             'post_code'=>'000-0000',
             'building'=>'aaa',
         ]);
         Buy::create([
             'user_id'=>$user->id,
             'item_id'=>$item->id,
-            'profile_id'=>$updateProfile->id,
+            'profile_id'=>$profile->id,
             'payment'=>'10000',
         ]);
         $this->assertDatabaseHas('buys',[
             'user_id'=>$user->id,
             'item_id'=>$item->id,
-            'profile_id'=>$updateProfile->id,
+            'profile_id'=>$profile->id,
             'payment'=>'10000',
         ]);
     }

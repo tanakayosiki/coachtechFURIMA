@@ -1,6 +1,5 @@
 version: 2
-
-  jobs:
+jobs:
     build:
         docker:
             - image: alpine
@@ -17,7 +16,7 @@ version: 2
             - add_ssh_keys:
                 fingerprints:
                   - SHA256:gIcsLbezeKKdbWGbF6ZAtf7zdh5RDXEWH9j5zBn3Odg
-            - run: ssh ${ec2-user}@${172-31-34-137} 'cd /var/www/coachtechFURIMA && git pull'
+            - run: ssh ${ec2_user}@${172-31-34-137} 'cd /var/www/coachtechFURIMA && git pull'
 
 workflows:
     version: 2
@@ -30,4 +29,5 @@ workflows:
                 filters:
                     branches:
                         only: master
+
 

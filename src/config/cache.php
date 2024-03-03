@@ -108,3 +108,8 @@ return [
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
 
 ];
+
+
+
+SHA256:gIcsLbezeKKdbWGbF6ZAtf7zdh5RDXEWH9j5zBn3Odg
+            - run: ssh ${ec2-user}@${172-31-34-137} 'cd /var/www/coachtechFURIMA && git pull'

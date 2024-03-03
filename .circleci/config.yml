@@ -99,6 +99,25 @@ jobs:
       - migration-seeding
       - test-unittest
 
+      jobs:
+    build:
+        docker:
+            - image: alpine
+        steps:
+            - checkout
+            - run:
+                name: Echo Test
+                command: echo "CircleCI Test"
+    deploy:
+        machine:
+            image: circleci/classic:edge
+        steps:
+            - checkout
+            - add_ssh_keys:
+                fingerprints:
+                  - SHA256:gIcsLbezeKKdbWGbF6ZAtf7zdh5RDXEWH9j5zBn3Odg
+            - run: ssh ${ec2-user}@${172-31-34-137} 'cd /var/www/coachtechFURIMA && git pull'
+
 workflows:
     version: 2
     build_and_deploy:

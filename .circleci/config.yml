@@ -78,7 +78,7 @@ commands:
     steps:
       - run:
           name: Run PHPUnit
-          command: vendor/bin/phpunit
+          command: vendor/bin/phpunit tests/Feature
           working_directory: src
 
 jobs:

@@ -23,7 +23,7 @@ class ShopCommentTest extends TestCase
      */
     public function test_example()
     {
-        $this->seed('RolesTestTableSeeder');
+        $this->seed('RolesTableSeeder');
         $this->shopManager=User::factory()->create();
         $this->assertDatabaseHas('users',[
             'email'=>$this->shopManager->email,

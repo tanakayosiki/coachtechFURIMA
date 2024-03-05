@@ -17,7 +17,7 @@ class AdminTest extends TestCase
      */
     public function test_example()
     {
-        $this->seed('RolesTestTableSeeder');
+        $this->seed('RolesTableSeeder');
         $adminUser=User::factory()->create();
         $adminUser->roles()->sync(1);
         $user=User::factory()->create();

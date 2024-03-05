@@ -9,6 +9,7 @@ use App\Models\Item;
 use App\Models\Room;
 use App\Models\ShopComment;
 use App\Models\Shop;
+use DB;
 
 class AdminController extends Controller
 {
@@ -24,11 +25,27 @@ class AdminController extends Controller
 
     public function delete($id){
         $user=User::find($id);
-        $item=Item::whereHas('sell',function($query)use($id){
+        $items=Item::whereHas('sell',function($query)use($id){
+            $query->where('user_id',$id);
+        })->get();
+        $role=DB::table('role_user')->where('user_id',$user->id)->first();
+        $shop=Shop::whereHas('staffs',function($query)use($id){
             $query->where('user_id',$id);
         })->first();
+        $shopSells=Item::whereHas('shopsell',function($query)use($shop){
+            $query->where('shop_id',optional($shop)->id);
+        })->get();
+        $null=null;
         $user->delete();
-        optional($item)->delete();
+        foreach($items as $item){
+            $item->delete();
+        }
+        if($role->role_id===2){
+        $shop->delete();
+        foreach($shopSells as $shopSell){
+            $shopSell->delete();
+        }
+        }
         return back()->with('message','削除しました');
     }
 

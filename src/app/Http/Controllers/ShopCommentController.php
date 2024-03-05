@@ -59,7 +59,7 @@ class ShopCommentController extends Controller
             $query->where('item_id',$room->item_id);
         })->first();
         $comments=ShopComment::where('room_id',$room->id)->get();
-        return view('staff_Comment',compact('room','comments','itemShop','user'));
+        return view('staff_comment',compact('room','comments','itemShop','user'));
     }
 
     public function postStaffComment(Request $request,$id){

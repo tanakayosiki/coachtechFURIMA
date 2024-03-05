@@ -19,7 +19,7 @@ class AuthController extends Controller
 
     public function postRegister(RegisterRequest $request)
     {
-        $role=DB::table('role_user')->where('role_id','1')->first();
+        $role=DB::table('role_user')->where('role_id',1)->first();
         $null=null;
         try{
             $user=User::create([

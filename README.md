@@ -84,7 +84,8 @@ DB_PASSWORD=laravel_pass
 上記の画像の右上の会員登録から会員登録する。（1番最初に登録したユーザーのみ管理人の権限が付与されます）
 
 ## ER図
-<img width="744" alt="スクリーンショット 2024-03-02 19 25 03" src="https://github.com/tanakayosiki/coachtechFURIMA/assets/135409428/ff8178e5-3846-4a5d-be4d-d46fc381739a">
+<img width="872" alt="スクリーンショット 2024-03-05 16 04 20" src="https://github.com/tanakayosiki/coachtechFURIMA/assets/135409428/c8f0ab9d-f860-44ad-85c8-bf4547347c66">
+
 
 
 

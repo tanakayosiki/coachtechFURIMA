@@ -1,6 +1,7 @@
 # フリマアプリ　coachtechフリマ
 商品の出品、購入を行うことができるサービスです。
-<img width="887" alt="スクリーンショット 2024-03-05 13 18 42" src="https://github.com/tanakayosiki/coachtechFURIMA/assets/135409428/76074bb0-c3fa-4430-8e4a-3fc01767e335">
+<img width="890" alt="スクリーンショット 2024-03-05 15 32 01" src="https://github.com/tanakayosiki/coachtechFURIMA/assets/135409428/3ce209c7-76ce-491b-b458-7315fa5964a4">
+
 
 
 ## 概要
@@ -79,7 +80,7 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user  
 DB_PASSWORD=laravel_pass  
 6.ユーザー登録
-<img width="887" alt="スクリーンショット 2024-03-05 13 18 42" src="https://github.com/tanakayosiki/coachtechFURIMA/assets/135409428/80df5563-e0d6-40f6-97f8-1b27a53ceaeb">
+<img width="890" alt="スクリーンショット 2024-03-05 15 32 01" src="https://github.com/tanakayosiki/coachtechFURIMA/assets/135409428/f7f05ea8-76a8-4353-8c1b-d76d2aaf36e3">
 上記の画像の右上の会員登録から会員登録する。（初回登録のユーザーのみ管理人の権限が付与されます）
 
 ## ER図

@@ -90,35 +90,11 @@
         margin-bottom: 20px;
     }
 
-    .mylist {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 15px;
-        color: red;
-        margin-left: 30px;
-    }
-
-    .no_mylist {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 15px;
-        color: gray;
-        margin-left: 30px;
-    }
-
     .rec {
         text-decoration: none;
         font-weight: bold;
         font-size: 15px;
         color: red;
-        margin-left: 30px;
-    }
-
-    .no_rec {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 15px;
-        color: gray;
         margin-left: 30px;
     }
 
@@ -146,35 +122,11 @@
         margin-bottom: 20px;
     }
 
-    .mylist {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 20px;
-        color: red;
-        margin-left: 60px;
-    }
-
-    .no_mylist {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 20px;
-        color: gray;
-        margin-left: 60px;
-    }
-
     .rec {
         text-decoration: none;
         font-weight: bold;
         font-size: 20px;
         color: red;
-        margin-left: 60px;
-    }
-
-    .no_rec {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 20px;
-        color: gray;
         margin-left: 60px;
     }
 

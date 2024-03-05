@@ -73,12 +73,12 @@
                             @else
                             <div class="by_user">
                                 <div class="user_info">
-                                    @if($comment->user->staff->shop->img===null)
+                                    @if($comment->room->user->profile->img===null)
                                     <p class="no_img"></p>
-                                    <p class="name">{{$comment->user->staff->shop->name}}</p>
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
                                     @else
-                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->user->staff->shop->img)}}">
-                                    <p class="name">{{$comment->user->staff->shop->name}}</p>
+                                    <img class="user_img" src="{{Storage::disk('s3')->url($comment->room->user->profile->img)}}">
+                                    <p class="name">{{$comment->room->user->profile->name}}</p>
                                     @endif
                                     <a class="delete" href="{{route('deleteShopComment',$comment->id)}}">削除</a>
                                 </div>

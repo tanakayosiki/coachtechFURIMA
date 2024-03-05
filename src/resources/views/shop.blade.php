@@ -26,16 +26,7 @@
         <div class="shop">
             <div class="item">
             <div class="list_link">
-                @if(Request::is('shop'))
                 <a class="rec" href="/shop">おすすめ</a>
-                @else
-                <a class="no_rec" href="/shop">おすすめ</a>
-                @endif
-                @if(Request::is('mylist'))
-                <a class="mylist" href="/shop/mylist">マイリスト</a>
-                @else
-                <a class="no_mylist" href="/shop/mylist">マイリスト</a>
-                @endif
             </div>
             <p class="message">{{session('message')}}</p>
             <div class="item_list">
